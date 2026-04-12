@@ -2,7 +2,7 @@
   {
     "id": "spare-engine",
     "name": "Spare air-cooled engine",
-    "category": "drivetrain",
+    "category": "test",
     "price": "Make offer",
     "condition": "As-found",
     "status": "available",
