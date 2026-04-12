@@ -25,9 +25,13 @@ eleventyComputed:
       <div class="gallery">
         <div class="gallery-main" id="gallery-main">
           {% if part.images and part.images.length > 0 %}
-            <img id="main-img"
-                 src="{{ ('/parts/' + part.id + '/images/' + part.images[0]) | url }}"
-                 alt="{{ part.name }}">
+            {% set firstImg = part.images[0] %}
+            {% if 'http' in firstImg %}
+              {% set firstSrc = firstImg %}
+            {% else %}
+              {% set firstSrc = ('/parts/' + part.id + '/images/' + firstImg) | url %}
+            {% endif %}
+            <img id="main-img" src="{{ firstSrc }}" alt="{{ part.name }}">
           {% else %}
             <div class="gallery-placeholder">Photos coming soon</div>
           {% endif %}
@@ -36,10 +40,14 @@ eleventyComputed:
         {% if part.images and part.images.length > 1 %}
           <div class="gallery-thumbs">
             {% for img in part.images %}
+              {% if 'http' in img %}
+                {% set imgSrc = img %}
+              {% else %}
+                {% set imgSrc = ('/parts/' + part.id + '/images/' + img) | url %}
+              {% endif %}
               <div class="gallery-thumb{% if loop.first %} active{% endif %}"
-                   data-src="{{ ('/parts/' + part.id + '/images/' + img) | url }}">
-                <img src="{{ ('/parts/' + part.id + '/images/' + img) | url }}"
-                     alt="{{ part.name }} photo {{ loop.index }}">
+                   data-src="{{ imgSrc }}">
+                <img src="{{ imgSrc }}" alt="{{ part.name }} photo {{ loop.index }}">
               </div>
             {% endfor %}
           </div>
