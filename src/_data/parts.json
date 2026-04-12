@@ -1,0 +1,57 @@
+[
+  {
+    "id": "spare-engine",
+    "name": "Spare air-cooled engine",
+    "category": "drivetrain",
+    "price": "Make offer",
+    "condition": "As-found",
+    "status": "available",
+    "description": "Air-cooled engine pulled from a donor car during the restoration. Turns over by hand. Internal condition unknown — buyer should inspect before purchase. A solid candidate for a rebuild project.",
+    "notes": "Vancouver pickup strongly preferred. Not interested in cross-border shipping.",
+    "images": []
+  },
+  {
+    "id": "transmission",
+    "name": "Matching transmission",
+    "category": "drivetrain",
+    "price": "Make offer",
+    "condition": "As-found",
+    "status": "available",
+    "description": "Gearbox from the same donor. Shifts through gears by hand. No idea on synchros — treat as a parts/rebuild unit unless you inspect it yourself.",
+    "notes": "Can be bundled with the spare engine.",
+    "images": []
+  },
+  {
+    "id": "drum-brakes",
+    "name": "Drum brake set (complete)",
+    "category": "brakes",
+    "price": "Make offer",
+    "condition": "Used — serviceable",
+    "status": "available",
+    "description": "Full set of period-correct drum brakes, removed when converting to discs. Hardware included. Surface rust present but all pieces are there.",
+    "notes": "",
+    "images": []
+  },
+  {
+    "id": "wheels",
+    "name": "Stock 356 wheels (set of 4)",
+    "category": "wheels",
+    "price": "Make offer",
+    "condition": "Used — refinishable",
+    "status": "available",
+    "description": "Original steel wheels. Surface rust on all four, no cracks or bends. Would clean up well with sandblasting and paint. Sold as a set.",
+    "notes": "",
+    "images": []
+  },
+  {
+    "id": "suspension-lot",
+    "name": "Front & rear suspension components",
+    "category": "suspension",
+    "price": "Make offer",
+    "condition": "As-found",
+    "status": "available",
+    "description": "Assorted front and rear suspension pieces from the donor. Will list individually on request — or take the lot. Ask for a specific parts list and photos.",
+    "notes": "Email with what you're looking for.",
+    "images": []
+  }
+]

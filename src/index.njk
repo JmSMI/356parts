@@ -1,0 +1,89 @@
+---
+layout: base.njk
+title: Porsche 356 Parts — Vancouver, BC
+---
+
+<div class="container">
+
+  <div class="page-intro">
+    <h1>Surplus parts from a 356 restoration</h1>
+    <p>My father's Porsche 356 is being brought back. These pieces didn't make the cut — sold as-is, no warranty, buyer inspects. Vancouver pickup preferred; open to discussing shipping within Canada.</p>
+    <div class="meta-chips">
+      <span class="chip">Vancouver, BC</span>
+      <span class="chip">Canada only</span>
+      <span class="chip">Cash / e-Transfer</span>
+      <span class="chip">Pickup preferred</span>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    {% set cats = [] %}
+    {% for part in parts %}
+      {% if part.category not in cats %}
+        {% set cats = cats.concat([part.category]) %}
+        <button class="filter-btn" data-filter="{{ part.category }}">{{ part.category }}</button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="parts-section">
+    <div class="parts-grid" id="parts-grid">
+      {% for part in parts %}
+        <a href="{{ ('/parts/' + part.id + '/') | url }}"
+           class="part-card{% if part.status == 'sold' %} sold{% endif %}"
+           data-category="{{ part.category }}">
+
+          {% if part.status == 'sold' %}
+            <span class="sold-badge">Sold</span>
+          {% endif %}
+
+          <div class="part-card-top">
+            <span class="part-name">{{ part.name }}</span>
+            <span class="cat-tag {{ part.category | categoryColor }}">{{ part.category }}</span>
+          </div>
+
+          <p class="part-desc">{{ part.description }}</p>
+
+          <div class="part-footer">
+            <span class="part-price">{{ part.price }}</span>
+            <span class="part-condition">{{ part.condition }}</span>
+          </div>
+
+          {% if part.images and part.images.length > 0 %}
+            <span class="img-count">{{ part.images.length }} photo{% if part.images.length != 1 %}s{% endif %}</span>
+          {% endif %}
+
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="contact-section" id="contact">
+    <h2>Get in touch</h2>
+    <p>Serious inquiries only. Please mention which part you're after and your general location. I'll respond within a day or two.</p>
+    <a href="mailto:YOUR_EMAIL@example.com?subject=356 Parts inquiry" class="contact-link">Send an email</a>
+  </div>
+
+</div>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.part-card');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.removeAttribute('hidden');
+        } else {
+          card.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+</script>

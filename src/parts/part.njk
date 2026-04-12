@@ -1,0 +1,94 @@
+---
+layout: base.njk
+pagination:
+  data: parts
+  size: 1
+  alias: part
+permalink: "parts/{{ part.id }}/"
+eleventyComputed:
+  title: "{{ part.name }} — 356 Parts"
+  description: "{{ part.description }}"
+---
+
+<div class="container">
+  <div class="part-detail">
+
+    <div class="breadcrumb">
+      <a href="{{ '/' | url }}">← All parts</a>
+      <span>/</span>
+      <span>{{ part.name }}</span>
+    </div>
+
+    <div class="detail-grid">
+
+      <!-- Gallery -->
+      <div class="gallery">
+        <div class="gallery-main" id="gallery-main">
+          {% if part.images and part.images.length > 0 %}
+            <img id="main-img"
+                 src="{{ ('/parts/' + part.id + '/images/' + part.images[0]) | url }}"
+                 alt="{{ part.name }}">
+          {% else %}
+            <div class="gallery-placeholder">Photos coming soon</div>
+          {% endif %}
+        </div>
+
+        {% if part.images and part.images.length > 1 %}
+          <div class="gallery-thumbs">
+            {% for img in part.images %}
+              <div class="gallery-thumb{% if loop.first %} active{% endif %}"
+                   data-src="{{ ('/parts/' + part.id + '/images/' + img) | url }}">
+                <img src="{{ ('/parts/' + part.id + '/images/' + img) | url }}"
+                     alt="{{ part.name }} photo {{ loop.index }}">
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Info -->
+      <div class="detail-info">
+        <div class="detail-header">
+          <span class="cat-tag {{ part.category | categoryColor }}">{{ part.category }}</span>
+          <h1>{{ part.name }}</h1>
+          <div class="detail-meta">
+            <span class="detail-price">{{ part.price }}</span>
+            <span class="detail-condition">{{ part.condition }}</span>
+            {% if part.status == 'sold' %}
+              <span class="sold-badge" style="position:static;">Sold</span>
+            {% endif %}
+          </div>
+        </div>
+
+        <p class="detail-desc">{{ part.description }}</p>
+
+        {% if part.notes %}
+          <div class="detail-notes">{{ part.notes }}</div>
+        {% endif %}
+
+        {% if part.status != 'sold' %}
+          <div class="detail-contact">
+            <a href="mailto:YOUR_EMAIL@example.com?subject=Inquiry: {{ part.name }}" class="contact-link">
+              Inquire about this part
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% if part.images and part.images.length > 1 %}
+<script>
+  const mainImg = document.getElementById('main-img');
+  const thumbs  = document.querySelectorAll('.gallery-thumb');
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      mainImg.src = thumb.dataset.src;
+    });
+  });
+</script>
+{% endif %}
