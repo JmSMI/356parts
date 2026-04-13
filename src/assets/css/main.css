@@ -160,7 +160,7 @@ main {
 
 .page-intro h1 {
   font-family: var(--font-serif);
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
   color: var(--bark);
