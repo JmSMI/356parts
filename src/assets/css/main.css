@@ -3,20 +3,25 @@
    - Removes browser inconsistencies
    - Sets box model globally
 ========================================================= */
+
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* SIZING MODEL → padding and border are included IN the element's width/height.
+                             Without this, adding padding would make elements grow unexpectedly.
+                             Leave this alone — it's a universal best practice. */
+  margin: 0;              /* OUTER SPACING → removes all default browser margins (e.g. browsers add margin to <h1>, <p> etc. by default) */
+  padding: 0;             /* INNER SPACING → removes all default browser padding */
 }
 
 img {
-  display: block;
-  max-width: 100%;
+  display: block;    /* DISPLAY → prevents inline images from having a mysterious gap underneath them (browser default adds descender space) */
+  max-width: 100%;   /* MAX WIDTH → images will never overflow their container. They scale down but won't scale up beyond their natural size. */
 }
 
 a {
-  color: inherit;
+  color: inherit; /* LINK COLOR → links take on whatever color the surrounding text has, instead of the browser default blue.
+                     Remove this if you want explicit link colors everywhere. */
 }
+
 
 /* =========================================================
    DESIGN TOKENS (GLOBAL VARIABLES)
@@ -24,297 +29,368 @@ a {
    - Edit these first to change site-wide style
 ========================================================= */
 :root {
-  /* Base palette */
-  --cream:    #F5F0E8;
-  --warm-off: #EDE7D9;
-  --tan:      #C8B99A;
-  --rust:     #8B4513;
-  --rust-mid: #A0522D;
-  --rust-lt:  #D2691E;
-  --bark:     #3D2B1F;
-  --ink:      #1C1410;
-  --mist:     #7A6E62;
-  --border:   #D4C9B5;
-  --border-lt:#E8E0D0;
+  /* ── Base palette ──────────────────────────────────────
+     These are your named colors. Change the hex values here
+     and the whole site updates. Nothing else needs touching. */
 
-  /* Category color system (tag pills) */
-  --cat-drivetrain-bg: #F0E8DC; --cat-drivetrain-tx: #6B3A1F;
-  --cat-suspension-bg: #E8EDD8; --cat-suspension-tx: #3A5220;
-  --cat-brakes-bg:     #F0E4D4; --cat-brakes-tx:     #7A3B0E;
-  --cat-wheels-bg:     #E4E4F0; --cat-wheels-tx:     #2E2E6B;
-  --cat-electrical-bg: #EDE4F0; --cat-electrical-tx: #52206B;
-  --cat-body-bg:       #E4F0EC; --cat-body-tx:       #1A5040;
-  --cat-interior-bg:   #F0ECE4; --cat-interior-tx:   #5C4A28;
-  --cat-other-bg:      #EBEBEB; --cat-other-tx:      #4A4A4A;
+  --cream:    #F5F0E8; /* BACKGROUND COLOR → the warm off-white used for the page background and card fills.
+                          Options: cooler white #F8F8F4 | pure white #FFFFFF | darker parchment #EDE6D6 */
 
-  /* Typography */
-  --font-mono:  'DM Mono', monospace;
-  --font-serif: Georgia, 'Times New Roman', serif;
+  --warm-off: #EDE7D9; /* HOVER / SURFACE COLOR → slightly darker than cream, used on card hover and secondary surfaces.
+                          Options: try #E8E0CE for more contrast on hover | #F0EBE0 for subtler hover */
 
-  /* Layout system */
-  --max-w: 1020px;
-  --gap: 1.5rem;
+  --tan:      #C8B99A; /* ACCENT NEUTRAL → used for thumbnail borders, image count labels, notes callout border.
+                          A mid-tone warm brown. Options: lighter #D4C4A8 | darker #B0A080 */
+
+  --rust:     #8B4513; /* PRIMARY ACCENT → the main rust/saddle-brown used for prices, the logo mark, active filter buttons, and contact button border.
+                          This is your most important brand color. Options: deeper #6B3410 | warmer #9B4E18 | more orange #A0521A */
+
+  --rust-mid: #A0522D; /* HOVER ACCENT → slightly lighter rust used on filter button hover state.
+                          Options: keep it close to --rust, just slightly lighter/warmer */
+
+  --rust-lt:  #D2691E; /* LIGHT RUST → currently defined but not heavily used. Available for highlights or links.
+                          Options: use as a hover color for text links */
+
+  --bark:     #3D2B1F; /* DARK BROWN → used for headings, part names, section titles. Warmer than black.
+                          Options: true black #000000 | slightly lighter #4A3428 | cooler dark #2C2420 */
+
+  --ink:      #1C1410; /* BODY TEXT COLOR → near-black for all body text. Warmer than pure black, easier to read.
+                          Options: pure black #000000 | softer #2A2018 */
+
+  --mist:     #7A6E62; /* SECONDARY TEXT → used for descriptions, metadata, nav links, labels. A warm mid-grey.
+                          Options: cooler grey #6E6E6E | darker #5A5048 | lighter #9A8E82 */
+
+  --border:   #D4C9B5; /* BORDER COLOR → used for most dividing lines and card borders.
+                          Options: more visible #C0B49E | subtler #E0D8C8 */
+
+  --border-lt:#E8E0D0; /* LIGHT BORDER → used for subtle internal dividers (e.g. card footer line).
+                          Options: even subtler #EDE8E0 | remove distinction and just use --border everywhere */
+
+
+  /* ── Category color system (tag pills) ────────────────
+     Each category gets a background and text color.
+     Pattern: light warm tint bg + dark saturated text from same hue family.
+     To add a new category: add two variables here, then add a CSS class below. */
+
+  --cat-drivetrain-bg: #F0E8DC; --cat-drivetrain-tx: #6B3A1F; /* DRIVETRAIN TAG → warm tan/brown tones */
+  --cat-suspension-bg: #E8EDD8; --cat-suspension-tx: #3A5220; /* SUSPENSION TAG → muted olive/green tones */
+  --cat-brakes-bg:     #F0E4D4; --cat-brakes-tx:     #7A3B0E; /* BRAKES TAG → warm amber/orange tones */
+  --cat-wheels-bg:     #E4E4F0; --cat-wheels-tx:     #2E2E6B; /* WHEELS TAG → cool blue-purple tones */
+  --cat-electrical-bg: #EDE4F0; --cat-electrical-tx: #52206B; /* ELECTRICAL TAG → purple tones */
+  --cat-body-bg:       #E4F0EC; --cat-body-tx:       #1A5040; /* BODY TAG → teal/green tones */
+  --cat-interior-bg:   #F0ECE4; --cat-interior-tx:   #5C4A28; /* INTERIOR TAG → warm neutral brown */
+  --cat-other-bg:      #EBEBEB; --cat-other-tx:      #4A4A4A; /* OTHER TAG → neutral grey */
+
+
+  /* ── Typography ──────────────────────────────────────── */
+
+  --font-mono:  'DM Mono', monospace; /* MONOSPACE FONT → used for all body text, labels, nav, descriptions.
+                                         Gives the site a technical/workshop feel.
+                                         Options: 'IBM Plex Mono' | 'Courier Prime' | 'Space Mono' (more retro) */
+
+  --font-serif: Georgia, 'Times New Roman', serif; /* SERIF FONT → used for headings and part names only.
+                                                      Adds editorial warmth against the mono body text.
+                                                      Options: 'Playfair Display' (Google Font, more elegant) |
+                                                               'Libre Baskerville' (Google Font, sturdy) |
+                                                               'IM Fell English' (Google Font, vintage feel) */
+
+  /* ── Layout ──────────────────────────────────────────── */
+
+  --max-w: 1020px; /* MAX PAGE WIDTH → content never stretches wider than this on large screens.
+                      Options: 900px (tighter, more editorial) | 1200px (wider, more items per row) */
+
+  --gap: 1.5rem;   /* BASE GAP → not currently used directly in most rules, but available as a spacing reference.
+                      1rem = 16px at default font size */
 }
+
 
 /* =========================================================
    BASE LAYOUT / TYPOGRAPHY
 ========================================================= */
+
 html {
-  font-size: 16px;
-  scroll-behavior: smooth;
+  font-size: 16px;       /* ROOT FONT SIZE → all rem units are relative to this. 1rem = 16px.
+                            Options: 15px (slightly smaller overall) | 18px (larger, more readable on big screens) */
+  scroll-behavior: smooth; /* SCROLL ANIMATION → clicking anchor links (#contact etc.) scrolls smoothly instead of jumping.
+                              Remove if you prefer instant jumps. */
 }
 
 body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-weight: 300;
-  line-height: 1.65;
-
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background: var(--cream); /* PAGE BACKGROUND → the warm off-white behind everything */
+  color: var(--ink);         /* DEFAULT TEXT COLOR → applies to all text that doesn't have its own color set */
+  font-family: var(--font-mono); /* DEFAULT FONT → everything uses the monospace font unless overridden */
+  font-weight: 300;          /* FONT WEIGHT → 300 = light/thin. Makes the mono font feel refined rather than heavy.
+                                Options: 400 = regular (more readable at small sizes) | 300 = light (current, elegant) */
+  line-height: 1.65;         /* LINE HEIGHT → space between lines of body text. 1.65 = comfortable reading rhythm.
+                                Options: 1.5 (tighter) | 1.8 (more airy/editorial) */
+  min-height: 100vh;         /* MIN HEIGHT → body is at least as tall as the viewport. Keeps footer at bottom on short pages. */
+  display: flex;             /* LAYOUT → makes the body a flex column so the footer can be pushed to the bottom */
+  flex-direction: column;    /* DIRECTION → stacks header, main, footer vertically */
 }
+
 
 /* =========================================================
    HEADER / NAVIGATION
 ========================================================= */
+
 .site-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 2rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  background: var(--cream);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  border-bottom: 1px solid var(--border); /* BOTTOM LINE → thin divider separating header from page content.
+                                             Options: remove for no line | 2px for stronger separation */
+  padding: 1rem 2rem; /* INNER SPACING → 1rem top/bottom, 2rem left/right. Controls header height and side breathing room.
+                         Options: 0.75rem 1.5rem (more compact) | 1.25rem 2rem (taller) */
+  display: flex;                  /* LAYOUT → puts logo and nav side by side */
+  align-items: center;            /* VERTICAL ALIGNMENT → logo and nav aligned to vertical center */
+  justify-content: space-between; /* HORIZONTAL LAYOUT → logo pushed to left, nav pushed to right */
+  background: var(--cream);       /* HEADER BACKGROUND → matches page so it's invisible until you scroll */
+  position: sticky;               /* STICKY → header stays at top of screen as you scroll down.
+                                     Options: remove 'sticky' and 'top: 0' to make it scroll away with the page */
+  top: 0;                         /* STICK POSITION → sticks to the very top of the viewport */
+  z-index: 100;                   /* LAYER ORDER → ensures header stays above all other content when overlapping.
+                                     Higher numbers = in front. 100 is safely above most content. */
 }
 
-/* Logo block */
 .site-logo {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  text-decoration: none;
+  display: flex;       /* LAYOUT → puts the "356" mark and "Parts / Vancouver" text side by side */
+  align-items: baseline; /* ALIGNMENT → aligns text along their text baselines (looks better than center for mixed font sizes) */
+  gap: 0.75rem;        /* GAP → space between the logo mark and the tagline text */
+  text-decoration: none; /* LINK STYLE → removes underline from the logo link */
 }
 
 .logo-mark {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.5rem;
-  color: var(--rust);
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif); /* FONT → uses the serif font for the "356" — contrast with the mono everything else */
+  font-style: italic;             /* ITALIC → tilted, gives it a vintage/editorial quality.
+                                     Options: remove for upright serif */
+  font-size: 1.5rem;              /* SIZE → 24px at default. Controls how big "356" appears.
+                                     Options: 1.25rem (smaller) | 2rem (more dominant) */
+  color: var(--rust);             /* COLOR → the rust accent makes the logo mark stand out */
+  letter-spacing: -0.02em;        /* LETTER SPACING → slightly tightened. Negative = letters closer together.
+                                     Options: 0 (normal) | -0.04em (very tight) */
 }
 
 .logo-text {
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: var(--mist);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.7rem;       /* SIZE → 11.2px. Very small — intentionally understated tagline.
+                               Options: 0.75rem (slightly larger) | 0.65rem (even smaller) */
+  font-weight: 400;         /* WEIGHT → regular (not light like body text) so it's legible at small size */
+  color: var(--mist);       /* COLOR → muted, so it doesn't compete with the "356" mark */
+  letter-spacing: 0.12em;   /* LETTER SPACING → widely spaced. Positive = letters spread apart. Classic for small caps/labels.
+                               Options: 0.08em (less spread) | 0.16em (very spaced out) */
+  text-transform: uppercase; /* CASE → forces all caps. Combined with letter-spacing gives a "label" feel. */
 }
 
-/* Nav links */
 .site-nav {
-  display: flex;
-  gap: 1.5rem;
+  display: flex; /* LAYOUT → puts nav links side by side */
+  gap: 1.5rem;   /* GAP → space between "Listing" and "Contact" links.
+                    Options: 1rem (tighter) | 2rem (more spread) */
 }
 
 .site-nav a {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--mist);
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.15s;
+  font-size: 0.75rem;       /* SIZE → 12px. Small nav links feel refined.
+                               Options: 0.8rem for slightly more readable */
+  font-weight: 400;          /* WEIGHT → regular */
+  color: var(--mist);        /* COLOR → muted by default, darkens on hover */
+  text-decoration: none;     /* STYLE → no underline on nav links */
+  letter-spacing: 0.08em;    /* SPACING → slightly spread, like a label */
+  text-transform: uppercase;  /* CASE → all caps for nav items */
+  transition: color 0.15s;   /* ANIMATION → color change on hover takes 0.15 seconds (smooth, not instant).
+                                Options: 0.1s (snappier) | 0.3s (slower, more dramatic) */
 }
 
 .site-nav a:hover {
-  color: var(--ink);
+  color: var(--ink); /* HOVER COLOR → darkens to near-black on hover. */
 }
+
 
 /* =========================================================
    PAGE LAYOUT WRAPPERS
 ========================================================= */
+
 main {
-  flex: 1;
+  flex: 1; /* GROWTH → main content area stretches to fill all available space between header and footer.
+              This is what keeps the footer at the bottom of the page even on short pages. */
 }
 
 .container {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 2rem;
+  max-width: var(--max-w); /* MAX WIDTH → content never goes wider than 1020px (from your token).
+                               Centers automatically on wide screens. */
+  margin: 0 auto;          /* CENTERING → auto left/right margins center the container horizontally */
+  padding: 0 2rem;         /* SIDE PADDING → 32px breathing room on left and right inside the container.
+                               Options: 1.5rem (tighter) | 3rem (more generous) */
 }
+
 
 /* =========================================================
    PAGE INTRO / HERO
 ========================================================= */
+
 .page-intro {
-  border-bottom: 1px solid var(--border);
-  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--border); /* BOTTOM LINE → divides the intro block from the filter bar below */
+  padding: 3rem 0 2rem; /* PADDING → 3rem (48px) top, 0 sides (container handles that), 2rem (32px) bottom.
+                            Options: 2rem 0 1.5rem for a more compact intro */
 }
 
 .page-intro h1 {
-  font-family: var(--font-serif);
-  font-style: normal;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  color: var(--bark);
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
+  font-family: var(--font-serif); /* FONT → serif for the main heading */
+  font-style: normal;             /* STYLE → upright (not italic). Options: italic for a more editorial feel */
+  font-size: clamp(2rem, 4vw, 3rem); /* RESPONSIVE SIZE → minimum 32px, scales with viewport width (4vw), maximum 48px.
+                                        clamp(min, preferred, max) — automatically responsive without media queries.
+                                        Options: clamp(1.75rem, 3vw, 2.5rem) for smaller heading */
+  font-weight: 400;               /* WEIGHT → regular weight serif looks more editorial than bold.
+                                     Options: 700 for a stronger, bolder headline */
+  color: var(--bark);             /* COLOR → dark warm brown for headings */
+  line-height: 1.15;              /* LINE HEIGHT → tight for a headline. Multi-line headings won't have huge gaps.
+                                     Options: 1.2 (slightly more open) | 1.0 (very tight, risky for multi-line) */
+  margin-bottom: 0.75rem;        /* SPACE BELOW → gap between heading and description paragraph */
 }
 
 .page-intro p {
-  font-size: 0.8rem;
-  color: var(--mist);
-  max-width: 52ch;
-  line-height: 1.7;
+  font-size: 0.8rem;  /* SIZE → 12.8px. Small body text under the heading.
+                         Options: 0.875rem (14px, more readable) | 0.75rem (very small) */
+  color: var(--mist); /* COLOR → muted, so it's clearly secondary to the heading */
+  max-width: 52ch;    /* MAX WIDTH → limits line length to ~52 characters. Long lines are hard to read.
+                         Options: 60ch (longer lines) | 45ch (shorter, punchier) */
+  line-height: 1.7;   /* LINE HEIGHT → more open than body default. Good for small text.
+                         Options: 1.6 (tighter) | 1.8 (very airy) */
 }
 
-/* Small metadata chips under intro */
 .meta-chips {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  display: flex;    /* LAYOUT → chips side by side */
+  gap: 0.5rem;      /* GAP → space between each chip */
+  flex-wrap: wrap;  /* WRAP → chips wrap to next line if they don't fit (important on mobile) */
+  margin-top: 1rem; /* SPACE ABOVE → gap between description text and the chips */
 }
 
 .chip {
-  font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border: 1px solid var(--border);
-  color: var(--mist);
-  background: transparent;
+  font-size: 0.65rem;        /* SIZE → very small. These are labels, not content. */
+  font-weight: 400;           /* WEIGHT → regular */
+  letter-spacing: 0.08em;     /* SPACING → spread out, label style */
+  text-transform: uppercase;   /* CASE → all caps */
+  padding: 3px 10px;          /* INNER SPACING → slim pill shape. Options: 4px 12px for slightly chunkier */
+  border: 1px solid var(--border); /* OUTLINE → thin border, no fill */
+  color: var(--mist);         /* TEXT COLOR → muted */
+  background: transparent;    /* BACKGROUND → hollow chip with just a border. Options: var(--warm-off) for a subtle fill */
 }
+
 
 /* =========================================================
    FILTER BAR (CATEGORY FILTERS)
 ========================================================= */
-.filter-bar {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border-lt);
 
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  align-items: center;
+.filter-bar {
+  padding: 1.25rem 0;                    /* INNER SPACING → breathing room above and below the filter row */
+  border-bottom: 1px solid var(--border-lt); /* BOTTOM LINE → subtle divider below the filters */
+  display: flex;                          /* LAYOUT → buttons in a row */
+  gap: 0.5rem;                            /* GAP → space between filter buttons */
+  flex-wrap: wrap;                        /* WRAP → buttons wrap on small screens */
+  align-items: center;                    /* ALIGNMENT → vertically centered */
 }
 
 .filter-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mist);
-  margin-right: 0.25rem;
+  font-size: 0.65rem;       /* SIZE → very small label */
+  letter-spacing: 0.1em;    /* SPACING → spread */
+  text-transform: uppercase; /* CASE → caps */
+  color: var(--mist);        /* COLOR → muted */
+  margin-right: 0.25rem;    /* SPACE → small gap between "Filter:" text and the first button */
 }
 
 .filter-btn {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 400;
-
-  letter-spacing: 0.06em;
-  padding: 4px 12px;
-
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--mist);
-
-  cursor: pointer;
-  transition: all 0.15s;
-
-  text-transform: lowercase;
+  font-family: var(--font-mono); /* FONT → matches site body font */
+  font-size: 0.7rem;             /* SIZE → small */
+  font-weight: 400;              /* WEIGHT → regular */
+  letter-spacing: 0.06em;        /* SPACING → slightly spread */
+  padding: 4px 12px;             /* INNER SPACING → controls button size. Options: 6px 16px for chunkier buttons */
+  border: 1px solid var(--border); /* BORDER → thin outline */
+  background: transparent;        /* BACKGROUND → hollow by default */
+  color: var(--mist);             /* TEXT COLOR → muted by default */
+  cursor: pointer;                /* CURSOR → hand cursor on hover (signals it's clickable) */
+  transition: all 0.15s;          /* ANIMATION → smooth transition on all properties when state changes */
+  text-transform: lowercase;       /* CASE → lowercase filter labels feel more casual/modern. Options: uppercase */
 }
 
 .filter-btn:hover {
-  border-color: var(--rust-mid);
-  color: var(--rust-mid);
+  border-color: var(--rust-mid); /* BORDER COLOR → changes to rust on hover */
+  color: var(--rust-mid);        /* TEXT COLOR → changes to rust on hover */
 }
 
 .filter-btn.active {
-  background: var(--rust);
-  border-color: var(--rust);
-  color: var(--cream);
+  background: var(--rust);    /* BACKGROUND → solid rust fill when this filter is selected */
+  border-color: var(--rust);  /* BORDER → matches fill so button looks solid */
+  color: var(--cream);        /* TEXT COLOR → light text on dark background (inverted) */
 }
+
 
 /* =========================================================
    PARTS GRID (MAIN LISTING)
 ========================================================= */
+
 .parts-section {
-  padding: 2rem 0 3rem;
+  padding: 2rem 0 3rem; /* SPACING → 2rem above grid, 3rem below. More space below feels grounded.
+                            Options: 1.5rem 0 2rem for a tighter section */
 }
 
 .parts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  display: grid;                                   /* LAYOUT → CSS Grid for the card tiles */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* COLUMNS → auto-fills columns that are at least 280px wide.
+                                                                    More space = more columns. Works at any screen width automatically.
+                                                                    Options: minmax(240px, 1fr) for more columns | minmax(320px, 1fr) for fewer, bigger cards */
+  gap: 1px;                   /* GAP → 1px between cards. Combined with the background color below, creates a grid line effect. */
+  background: var(--border);  /* BACKGROUND → the grid "lines" are actually the background showing through 1px gaps.
+                                  This is a clever CSS trick. Change to var(--cream) for no visible grid lines. */
+  border: 1px solid var(--border); /* OUTER BORDER → wraps the entire grid in a border */
 }
 
-/* Individual part card */
 .part-card {
-  background: var(--cream);
-  padding: 1.5rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-
-  text-decoration: none;
-  color: inherit;
-
-  transition: background 0.15s;
-  position: relative;
+  background: var(--cream);  /* CARD BACKGROUND → fills over the border-colored grid background */
+  padding: 1.5rem;            /* INNER SPACING → space inside each card around the content.
+                                Options: 1.25rem (tighter) | 2rem (more generous) */
+  display: flex;              /* LAYOUT → card content in a column */
+  flex-direction: column;     /* DIRECTION → stacks name, description, footer vertically */
+  gap: 0.75rem;               /* GAP → space between each element inside the card */
+  text-decoration: none;      /* STYLE → removes link underline (cards are <a> tags) */
+  color: inherit;             /* COLOR → card text inherits from parent (doesn't turn link-blue) */
+  transition: background 0.15s; /* ANIMATION → smooth background change on hover */
+  position: relative;         /* POSITION → allows absolute positioning of the "Sold" badge inside */
 }
 
 .part-card:hover {
-  background: var(--warm-off);
+  background: var(--warm-off); /* HOVER BACKGROUND → slightly darker cream on hover. Subtle feedback.
+                                  Options: var(--tan) for a stronger hover effect */
 }
 
-/* Sold state */
 .part-card.sold {
-  opacity: 0.5;
-  pointer-events: none;
+  opacity: 0.5;        /* OPACITY → fades sold cards to 50%. They're visible but clearly secondary.
+                          Options: 0.3 (more faded) | 0.6 (less faded) */
+  pointer-events: none; /* INTERACTION → disables clicking/hovering on sold cards */
 }
 
-/* Card header (title + tag) */
 .part-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
+  display: flex;                  /* LAYOUT → puts title and category tag side by side */
+  justify-content: space-between; /* SPACING → title on left, tag pushed to right */
+  align-items: flex-start;        /* ALIGNMENT → both align to top (tag doesn't stretch to match title height) */
+  gap: 0.5rem;                    /* GAP → space between title and tag */
 }
 
 .part-name {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--bark);
-  line-height: 1.25;
+  font-family: var(--font-serif); /* FONT → serif for part titles, like the headings */
+  font-style: italic;             /* STYLE → italic adds character. Options: normal for upright */
+  font-size: 1.1rem;              /* SIZE → 17.6px. Slightly larger than body text.
+                                     Options: 1rem (same as body) | 1.25rem (more prominent) */
+  font-weight: 400;               /* WEIGHT → regular serif */
+  color: var(--bark);             /* COLOR → dark brown, same as headings */
+  line-height: 1.25;              /* LINE HEIGHT → tight for a title that might wrap to two lines */
 }
 
-/* Category tag pill */
 .cat-tag {
-  font-size: 0.6rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  white-space: nowrap;
-  flex-shrink: 0;
+  font-size: 0.6rem;      /* SIZE → very small. Tag labels are metadata, not content.
+                             Options: 0.65rem for slightly larger */
+  font-weight: 500;        /* WEIGHT → medium. Slightly bolder than body so it's legible at small size */
+  letter-spacing: 0.08em;  /* SPACING → spread, label style */
+  text-transform: uppercase; /* CASE → all caps */
+  padding: 3px 8px;         /* INNER SPACING → small pill. Options: 4px 10px for slightly bigger tag */
+  white-space: nowrap;      /* WRAPPING → tag text never breaks to a new line */
+  flex-shrink: 0;           /* FLEX → tag doesn't shrink if the title is long. Tag always stays full size. */
 }
 
-/* Category color mapping */
+/* Category color mapping — each maps to the variables defined in :root */
 .cat-drivetrain { background: var(--cat-drivetrain-bg); color: var(--cat-drivetrain-tx); }
 .cat-suspension { background: var(--cat-suspension-bg); color: var(--cat-suspension-tx); }
 .cat-brakes     { background: var(--cat-brakes-bg);     color: var(--cat-brakes-tx); }
@@ -324,330 +400,342 @@ main {
 .cat-interior   { background: var(--cat-interior-bg);   color: var(--cat-interior-tx); }
 .cat-other      { background: var(--cat-other-bg);      color: var(--cat-other-tx); }
 
-/* Card description (clamped) */
 .part-desc {
-  font-size: 0.78rem;
-  color: var(--mist);
-  line-height: 1.6;
-
-  flex: 1;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-size: 0.78rem;    /* SIZE → 12.5px. Small description text.
+                            Options: 0.8rem (14px, more readable) | 0.75rem (12px, very small) */
+  color: var(--mist);    /* COLOR → muted, clearly secondary to the title */
+  line-height: 1.6;      /* LINE HEIGHT → comfortable for a few lines of text */
+  flex: 1;               /* GROWTH → description stretches to fill available card space.
+                            This pushes the price/condition footer to the bottom of every card, keeping them aligned. */
+  display: -webkit-box;         /* CLAMP SETUP → these three properties together enable line clamping */
+  -webkit-line-clamp: 3;        /* LINE CLAMP → truncates text after 3 lines and adds "..." automatically.
+                                   Options: 2 (tighter cards) | 4 (more description visible) */
+  -webkit-box-orient: vertical; /* CLAMP SETUP → required for the line clamp to work */
+  overflow: hidden;             /* CLAMP SETUP → hides the text beyond the clamp */
 }
 
-/* Footer: price + condition */
 .part-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--border-lt);
+  display: flex;                  /* LAYOUT → price and condition side by side */
+  justify-content: space-between; /* SPACING → price on left, condition on right */
+  align-items: center;            /* ALIGNMENT → vertically centered */
+  padding-top: 0.5rem;            /* SPACE ABOVE → breathing room between description and footer */
+  border-top: 1px solid var(--border-lt); /* TOP LINE → subtle divider above the price row */
 }
 
 .part-price {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--rust);
-  letter-spacing: 0.02em;
+  font-size: 0.85rem;   /* SIZE → slightly larger than labels, price is important content */
+  font-weight: 500;      /* WEIGHT → medium/bold. Price should stand out.
+                            Options: 400 for lighter feel | 700 for strong emphasis */
+  color: var(--rust);    /* COLOR → rust accent. Price is the key call-to-action info. */
+  letter-spacing: 0.02em; /* SPACING → very slightly spread, makes numbers feel more open */
 }
 
 .part-condition {
-  font-size: 0.65rem;
-  color: var(--mist);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.65rem;       /* SIZE → very small metadata */
+  color: var(--mist);        /* COLOR → muted */
+  letter-spacing: 0.06em;    /* SPACING → spread, label style */
+  text-transform: uppercase;  /* CASE → caps */
 }
 
-/* Sold badge overlay */
 .sold-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  background: var(--bark);
-  color: var(--cream);
-  padding: 3px 8px;
+  position: absolute; /* POSITION → removed from normal flow, placed relative to the card */
+  top: 1rem;          /* FROM TOP → 1rem from the top edge of the card */
+  right: 1rem;        /* FROM RIGHT → 1rem from the right edge of the card */
+  font-size: 0.6rem;        /* SIZE → small */
+  letter-spacing: 0.1em;    /* SPACING → spread */
+  text-transform: uppercase; /* CASE → SOLD */
+  background: var(--bark);   /* BACKGROUND → dark brown. High contrast, clearly "done". Options: var(--rust) for rust badge */
+  color: var(--cream);       /* TEXT COLOR → light on dark */
+  padding: 3px 8px;          /* INNER SPACING → slim badge */
 }
 
-/* Image count label */
 .img-count {
-  font-size: 0.65rem;
-  color: var(--tan);
-  letter-spacing: 0.06em;
+  font-size: 0.65rem;  /* SIZE → very small */
+  color: var(--tan);   /* COLOR → tan/neutral. Subtle hint about photos. */
+  letter-spacing: 0.06em; /* SPACING → spread */
 }
 
-/* Hidden cards (JS filtering) */
 .part-card[hidden] {
-  display: none;
+  display: none; /* VISIBILITY → completely removes filtered-out cards from layout (not just invisible — actually gone).
+                    This is set by the JavaScript filter buttons. */
 }
+
 
 /* =========================================================
    CONTACT SECTION
 ========================================================= */
+
 .contact-section {
-  border-top: 1px solid var(--border);
-  padding: 3rem 0;
+  border-top: 1px solid var(--border); /* TOP LINE → divides contact section from the grid above */
+  padding: 3rem 0;                     /* SPACING → generous top and bottom padding */
 }
 
 .contact-section h2 {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--bark);
-  margin-bottom: 0.75rem;
+  font-family: var(--font-serif); /* FONT → serif heading */
+  font-style: italic;             /* STYLE → italic */
+  font-size: 1.5rem;              /* SIZE → 24px */
+  font-weight: 400;               /* WEIGHT → regular */
+  color: var(--bark);             /* COLOR → dark brown */
+  margin-bottom: 0.75rem;        /* SPACE BELOW → gap between heading and paragraph */
 }
 
 .contact-section p {
-  font-size: 0.8rem;
-  color: var(--mist);
-  max-width: 50ch;
-  margin-bottom: 1.25rem;
-  line-height: 1.7;
+  font-size: 0.8rem;   /* SIZE → small body text */
+  color: var(--mist);   /* COLOR → muted */
+  max-width: 50ch;      /* MAX WIDTH → limits line length for readability */
+  margin-bottom: 1.25rem; /* SPACE BELOW → gap between text and the button */
+  line-height: 1.7;     /* LINE HEIGHT → comfortable */
 }
 
 .contact-link {
-  display: inline-block;
-
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  padding: 0.6rem 1.5rem;
-
-  border: 1px solid var(--rust);
-  color: var(--rust);
-  text-decoration: none;
-
-  transition: all 0.15s;
+  display: inline-block; /* DISPLAY → allows padding to work properly on an <a> tag */
+  font-size: 0.75rem;    /* SIZE → 12px */
+  font-weight: 400;       /* WEIGHT → regular */
+  letter-spacing: 0.08em; /* SPACING → spread */
+  text-transform: uppercase; /* CASE → caps */
+  padding: 0.6rem 1.5rem;  /* INNER SPACING → controls button size. Options: 0.75rem 2rem for a chunkier button */
+  border: 1px solid var(--rust); /* BORDER → rust outline */
+  color: var(--rust);            /* TEXT COLOR → rust */
+  text-decoration: none;         /* STYLE → no underline */
+  transition: all 0.15s;         /* ANIMATION → smooth invert on hover */
 }
 
 .contact-link:hover {
-  background: var(--rust);
-  color: var(--cream);
+  background: var(--rust); /* HOVER BACKGROUND → fills with rust color (inverts the button).
+                               This "ghost button → solid" effect is clean and readable. */
+  color: var(--cream);     /* HOVER TEXT → switches to light so it's readable on the dark background */
 }
+
 
 /* =========================================================
    PART DETAIL PAGE
 ========================================================= */
+
 .part-detail {
-  padding: 2.5rem 0 4rem;
+  padding: 2.5rem 0 4rem; /* SPACING → more padding at bottom gives the page room to breathe */
 }
 
-/* Breadcrumb navigation */
 .breadcrumb {
-  font-size: 0.7rem;
-  color: var(--mist);
-  margin-bottom: 2rem;
-  letter-spacing: 0.06em;
+  font-size: 0.7rem;    /* SIZE → small navigational text */
+  color: var(--mist);    /* COLOR → muted */
+  margin-bottom: 2rem;  /* SPACE BELOW → gap between breadcrumb and the main content */
+  letter-spacing: 0.06em; /* SPACING → slightly spread */
 }
 
 .breadcrumb a {
-  text-decoration: none;
+  text-decoration: none; /* STYLE → no underline */
 }
 
 .breadcrumb a:hover {
-  color: var(--rust);
+  color: var(--rust); /* HOVER COLOR → the "← All parts" link turns rust on hover */
 }
 
 .breadcrumb span {
-  margin: 0 0.4rem;
+  margin: 0 0.4rem; /* SPACING → space around the "/" separator between crumbs */
 }
 
-/* Layout: image + info */
 .detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  display: grid;                       /* LAYOUT → CSS Grid for the two-column layout */
+  grid-template-columns: 1fr 1fr;     /* COLUMNS → two equal columns (gallery | info).
+                                          Options: 3fr 2fr (bigger gallery) | 2fr 3fr (bigger info panel) */
+  gap: 3rem;                           /* GAP → space between gallery and info columns.
+                                          Options: 2rem (tighter) | 4rem (more separation) */
+  align-items: start;                  /* ALIGNMENT → both columns align to top (info panel doesn't stretch to match gallery height) */
 }
 
-/* Mobile layout */
 @media (max-width: 680px) {
   .detail-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr; /* MOBILE → switches to single column below 680px wide screens.
+                                   Options: change breakpoint to 768px for earlier stacking */
+    gap: 2rem;                  /* GAP → less gap when stacked vertically */
   }
 }
+
 
 /* =========================================================
    GALLERY
 ========================================================= */
+
 .gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: flex;         /* LAYOUT → stacks main image and thumbnails vertically */
+  flex-direction: column; /* DIRECTION → column */
+  gap: 0.5rem;            /* GAP → space between main image and thumbnail row */
 }
 
 .gallery-main {
-  aspect-ratio: 4/3;
-  background: var(--warm-off);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  position: relative;
+  aspect-ratio: 4/3;           /* SHAPE → forces the main image area to always be 4:3 ratio (like a photo).
+                                   Options: 16/9 (widescreen) | 1/1 (square) | 3/2 (35mm film ratio — fitting!) */
+  background: var(--warm-off); /* BACKGROUND → shows while image loads, or if image fails */
+  border: 1px solid var(--border); /* BORDER → thin frame around the main image */
+  overflow: hidden;            /* OVERFLOW → clips the image to the box. Required for object-fit to work. */
+  position: relative;          /* POSITION → allows potential absolute-positioned overlays inside */
 }
 
 .gallery-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
+  width: 100%;        /* WIDTH → image fills the full width of the container */
+  height: 100%;       /* HEIGHT → image fills the full height of the container */
+  object-fit: cover;  /* FIT → image is cropped to fill the box without stretching.
+                         Options: object-fit: contain (whole image visible, may have letterboxing) */
+  cursor: pointer;    /* CURSOR → hand cursor suggests the image is interactive */
 }
 
-/* Placeholder state */
 .gallery-placeholder {
-  width: 100%;
+  width: 100%;                /* FILLS the container when no images exist */
   height: 100%;
-
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: var(--tan);
+  align-items: center;        /* VERTICAL CENTERING */
+  justify-content: center;    /* HORIZONTAL CENTERING */
+  color: var(--tan);          /* COLOR → muted tan for placeholder text */
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* Thumbnails */
 .gallery-thumbs {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  display: flex;   /* LAYOUT → thumbnails in a row */
+  gap: 0.5rem;     /* GAP → space between thumbnails */
+  flex-wrap: wrap; /* WRAP → thumbnails wrap if there are too many to fit */
 }
 
 .gallery-thumb {
-  width: 64px;
+  width: 64px;              /* SIZE → fixed square thumbnails. Options: 72px (bigger) | 56px (smaller) */
   height: 64px;
-
-  border: 1px solid var(--border);
-  overflow: hidden;
-
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.15s;
-
-  background: var(--warm-off);
+  border: 1px solid var(--border); /* BORDER → outline */
+  overflow: hidden;          /* OVERFLOW → clips image to square */
+  cursor: pointer;           /* CURSOR → hand cursor */
+  opacity: 0.6;              /* OPACITY → thumbnails are dimmed by default.
+                                Options: 0.5 (more dimmed) | 0.75 (less dimmed) */
+  transition: opacity 0.15s; /* ANIMATION → smooth opacity change */
+  background: var(--warm-off); /* BACKGROUND → while loading */
 }
 
 .gallery-thumb:hover,
 .gallery-thumb.active {
-  opacity: 1;
-  border-color: var(--rust);
+  opacity: 1;                      /* OPACITY → full brightness on hover or when selected */
+  border-color: var(--rust);       /* BORDER → rust border highlights the selected/hovered thumbnail */
 }
 
 .gallery-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* FIT → thumbnail image fills square without stretching */
 }
+
 
 /* =========================================================
    DETAIL INFO PANEL
 ========================================================= */
+
 .detail-info {
-  display: flex;
+  display: flex;         /* LAYOUT → stacks all info elements vertically */
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.25rem;          /* GAP → space between header, description, notes, and button.
+                            Options: 1rem (tighter) | 1.5rem (more spaced) */
 }
 
 .detail-header h1 {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 400;
-  color: var(--bark);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
+  font-family: var(--font-serif); /* FONT → serif */
+  font-style: italic;             /* STYLE → italic */
+  font-size: clamp(1.5rem, 3vw, 2.2rem); /* RESPONSIVE SIZE → min 24px, scales with viewport, max 35px */
+  font-weight: 400;               /* WEIGHT → regular */
+  color: var(--bark);             /* COLOR → dark brown */
+  line-height: 1.2;               /* LINE HEIGHT → tight for a heading */
+  margin-bottom: 0.5rem;         /* SPACE BELOW → between the h1 and the price/condition row */
 }
 
 .detail-meta {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  flex-wrap: wrap;
+  display: flex;      /* LAYOUT → price, condition, and sold badge in a row */
+  gap: 0.75rem;       /* GAP → space between elements */
+  align-items: center; /* ALIGNMENT → vertically centered */
+  flex-wrap: wrap;    /* WRAP → stacks on very narrow screens */
 }
 
 .detail-price {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--rust);
+  font-size: 1.1rem;  /* SIZE → larger than surrounding labels — price is important.
+                         Options: 1.25rem (more prominent) | 1rem (same as body) */
+  font-weight: 500;    /* WEIGHT → medium bold */
+  color: var(--rust);  /* COLOR → rust accent */
 }
 
 .detail-condition {
-  font-size: 0.65rem;
-  color: var(--mist);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  border-left: 1px solid var(--border);
-  padding-left: 0.75rem;
+  font-size: 0.65rem;       /* SIZE → small label */
+  color: var(--mist);        /* COLOR → muted */
+  letter-spacing: 0.08em;    /* SPACING → spread */
+  text-transform: uppercase;  /* CASE → caps */
+  border-left: 1px solid var(--border); /* LEFT BORDER → visual separator between price and condition.
+                                           This is a common design pattern for inline metadata. */
+  padding-left: 0.75rem;               /* SPACE → pushes condition text away from the border */
 }
 
 .detail-desc {
-  font-size: 0.82rem;
-  color: var(--mist);
-  line-height: 1.75;
-
-  border-top: 1px solid var(--border-lt);
-  padding-top: 1.25rem;
+  font-size: 0.82rem;  /* SIZE → slightly larger than card descriptions — detail page can be more generous */
+  color: var(--mist);  /* COLOR → muted */
+  line-height: 1.75;   /* LINE HEIGHT → open and easy to read */
+  border-top: 1px solid var(--border-lt); /* TOP LINE → visual separator above the description */
+  padding-top: 1.25rem; /* SPACE → breathing room below the separator line */
 }
 
 .detail-notes {
-  font-size: 0.75rem;
-  color: var(--mist);
-
-  background: var(--warm-off);
-  border-left: 2px solid var(--tan);
-
-  padding: 0.75rem 1rem;
-  line-height: 1.6;
+  font-size: 0.75rem;            /* SIZE → small */
+  color: var(--mist);             /* COLOR → muted */
+  background: var(--warm-off);    /* BACKGROUND → slightly off-cream, distinguishes notes from description */
+  border-left: 2px solid var(--tan); /* LEFT ACCENT → tan bar on the left edge. Classic "callout" pattern.
+                                        Options: var(--rust) for a stronger accent */
+  padding: 0.75rem 1rem;          /* INNER SPACING → space inside the callout box */
+  line-height: 1.6;               /* LINE HEIGHT → comfortable */
 }
 
 .detail-contact {
-  padding-top: 0.5rem;
+  padding-top: 0.5rem; /* SPACE ABOVE → small gap before the contact button */
 }
 
 .detail-contact .contact-link {
-  width: 100%;
-  text-align: center;
-  display: block;
+  width: 100%;        /* WIDTH → button stretches to full column width on detail page.
+                         (On the index page the same class is inline/auto width) */
+  text-align: center; /* ALIGNMENT → centers the text inside the full-width button */
+  display: block;     /* DISPLAY → block so width: 100% works */
 }
+
 
 /* =========================================================
    FOOTER
 ========================================================= */
+
 .site-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.5rem 2rem;
-  text-align: center;
+  border-top: 1px solid var(--border); /* TOP LINE → separates footer from page content */
+  padding: 1.5rem 2rem;               /* INNER SPACING → breathing room around footer text */
+  text-align: center;                  /* ALIGNMENT → centered footer text */
 }
 
 .site-footer p {
-  font-size: 0.7rem;
-  color: var(--mist);
-  letter-spacing: 0.04em;
+  font-size: 0.7rem;     /* SIZE → very small. Footer is the least important content. */
+  color: var(--mist);    /* COLOR → muted */
+  letter-spacing: 0.04em; /* SPACING → very slightly spread */
 }
 
 .footer-note {
-  margin-top: 0.25rem;
-  opacity: 0.6;
+  margin-top: 0.25rem; /* SPACE ABOVE → small gap between the two footer lines */
+  opacity: 0.6;        /* OPACITY → second line (disclaimer) is even more subdued.
+                          Options: remove for equal weight | 0.4 for even more subtle */
 }
+
 
 /* =========================================================
    RESPONSIVE OVERRIDES
+   - Only triggered below certain screen widths
 ========================================================= */
+
 @media (max-width: 600px) {
-  .site-header { padding: 0.875rem 1rem; }
-  .container { padding: 0 1rem; }
-  .parts-grid { grid-template-columns: 1fr; }
+  .site-header {
+    padding: 0.875rem 1rem; /* MOBILE HEADER → less padding on small screens so it doesn't take too much height */
+  }
+
+  .container {
+    padding: 0 1rem; /* MOBILE CONTAINER → tighter side padding on small screens (was 2rem) */
+  }
+
+  .parts-grid {
+    grid-template-columns: 1fr; /* MOBILE GRID → single column of cards below 600px.
+                                   Options: keep two columns with minmax(160px, 1fr) for smaller cards */
+  }
 }
