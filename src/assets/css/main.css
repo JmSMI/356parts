@@ -1,10 +1,30 @@
-/* ── Reset ─────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-img { display: block; max-width: 100%; }
-a { color: inherit; }
+/* =========================================================
+   RESET / BASE NORMALIZATION
+   - Removes browser inconsistencies
+   - Sets box model globally
+========================================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* ── Tokens ─────────────────────────────────────────── */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* =========================================================
+   DESIGN TOKENS (GLOBAL VARIABLES)
+   - Colors, fonts, spacing, layout constants
+   - Edit these first to change site-wide style
+========================================================= */
 :root {
+  /* Base palette */
   --cream:    #F5F0E8;
   --warm-off: #EDE7D9;
   --tan:      #C8B99A;
@@ -17,6 +37,7 @@ a { color: inherit; }
   --border:   #D4C9B5;
   --border-lt:#E8E0D0;
 
+  /* Category color system (tag pills) */
   --cat-drivetrain-bg: #F0E8DC; --cat-drivetrain-tx: #6B3A1F;
   --cat-suspension-bg: #E8EDD8; --cat-suspension-tx: #3A5220;
   --cat-brakes-bg:     #F0E4D4; --cat-brakes-tx:     #7A3B0E;
@@ -26,15 +47,22 @@ a { color: inherit; }
   --cat-interior-bg:   #F0ECE4; --cat-interior-tx:   #5C4A28;
   --cat-other-bg:      #EBEBEB; --cat-other-tx:      #4A4A4A;
 
+  /* Typography */
   --font-mono:  'DM Mono', monospace;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-serif: 'Miranda Sans', Georgia, serif;
 
+  /* Layout system */
   --max-w: 1020px;
   --gap: 1.5rem;
 }
 
-/* ── Base ─────────────────────────────────────────── */
-html { font-size: 16px; scroll-behavior: smooth; }
+/* =========================================================
+   BASE LAYOUT / TYPOGRAPHY
+========================================================= */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--cream);
@@ -42,24 +70,30 @@ body {
   font-family: var(--font-mono);
   font-weight: 300;
   line-height: 1.65;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* ── Header ─────────────────────────────────────────── */
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
 .site-header {
   border-bottom: 1px solid var(--border);
   padding: 1rem 2rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   background: var(--cream);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
+/* Logo block */
 .site-logo {
   display: flex;
   align-items: baseline;
@@ -83,6 +117,7 @@ body {
   text-transform: uppercase;
 }
 
+/* Nav links */
 .site-nav {
   display: flex;
   gap: 1.5rem;
@@ -98,10 +133,16 @@ body {
   transition: color 0.15s;
 }
 
-.site-nav a:hover { color: var(--ink); }
+.site-nav a:hover {
+  color: var(--ink);
+}
 
-/* ── Main / containers ─────────────────────────────── */
-main { flex: 1; }
+/* =========================================================
+   PAGE LAYOUT WRAPPERS
+========================================================= */
+main {
+  flex: 1;
+}
 
 .container {
   max-width: var(--max-w);
@@ -109,7 +150,9 @@ main { flex: 1; }
   padding: 0 2rem;
 }
 
-/* ── Hero / intro ─────────────────────────────────── */
+/* =========================================================
+   PAGE INTRO / HERO
+========================================================= */
 .page-intro {
   border-bottom: 1px solid var(--border);
   padding: 3rem 0 2rem;
@@ -132,6 +175,7 @@ main { flex: 1; }
   line-height: 1.7;
 }
 
+/* Small metadata chips under intro */
 .meta-chips {
   display: flex;
   gap: 0.5rem;
@@ -150,10 +194,13 @@ main { flex: 1; }
   background: transparent;
 }
 
-/* ── Filter bar ─────────────────────────────────────── */
+/* =========================================================
+   FILTER BAR (CATEGORY FILTERS)
+========================================================= */
 .filter-bar {
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--border-lt);
+
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
@@ -172,13 +219,17 @@ main { flex: 1; }
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 400;
+
   letter-spacing: 0.06em;
   padding: 4px 12px;
+
   border: 1px solid var(--border);
   background: transparent;
   color: var(--mist);
+
   cursor: pointer;
   transition: all 0.15s;
+
   text-transform: lowercase;
 }
 
@@ -193,33 +244,49 @@ main { flex: 1; }
   color: var(--cream);
 }
 
-/* ── Parts grid ─────────────────────────────────────── */
-.parts-section { padding: 2rem 0 3rem; }
+/* =========================================================
+   PARTS GRID (MAIN LISTING)
+========================================================= */
+.parts-section {
+  padding: 2rem 0 3rem;
+}
 
 .parts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
 }
 
+/* Individual part card */
 .part-card {
   background: var(--cream);
   padding: 1.5rem;
+
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
   text-decoration: none;
   color: inherit;
+
   transition: background 0.15s;
   position: relative;
 }
 
-.part-card:hover { background: var(--warm-off); }
+.part-card:hover {
+  background: var(--warm-off);
+}
 
-.part-card.sold { opacity: 0.5; pointer-events: none; }
+/* Sold state */
+.part-card.sold {
+  opacity: 0.5;
+  pointer-events: none;
+}
 
+/* Card header (title + tag) */
 .part-card-top {
   display: flex;
   justify-content: space-between;
@@ -236,6 +303,7 @@ main { flex: 1; }
   line-height: 1.25;
 }
 
+/* Category tag pill */
 .cat-tag {
   font-size: 0.6rem;
   font-weight: 500;
@@ -246,30 +314,36 @@ main { flex: 1; }
   flex-shrink: 0;
 }
 
+/* Category color mapping */
 .cat-drivetrain { background: var(--cat-drivetrain-bg); color: var(--cat-drivetrain-tx); }
-.cat-suspension  { background: var(--cat-suspension-bg); color: var(--cat-suspension-tx); }
-.cat-brakes      { background: var(--cat-brakes-bg);     color: var(--cat-brakes-tx); }
-.cat-wheels      { background: var(--cat-wheels-bg);      color: var(--cat-wheels-tx); }
-.cat-electrical  { background: var(--cat-electrical-bg);  color: var(--cat-electrical-tx); }
-.cat-body        { background: var(--cat-body-bg);        color: var(--cat-body-tx); }
-.cat-interior    { background: var(--cat-interior-bg);    color: var(--cat-interior-tx); }
-.cat-other       { background: var(--cat-other-bg);       color: var(--cat-other-tx); }
+.cat-suspension { background: var(--cat-suspension-bg); color: var(--cat-suspension-tx); }
+.cat-brakes     { background: var(--cat-brakes-bg);     color: var(--cat-brakes-tx); }
+.cat-wheels     { background: var(--cat-wheels-bg);     color: var(--cat-wheels-tx); }
+.cat-electrical { background: var(--cat-electrical-bg); color: var(--cat-electrical-tx); }
+.cat-body       { background: var(--cat-body-bg);       color: var(--cat-body-tx); }
+.cat-interior   { background: var(--cat-interior-bg);   color: var(--cat-interior-tx); }
+.cat-other      { background: var(--cat-other-bg);      color: var(--cat-other-tx); }
 
+/* Card description (clamped) */
 .part-desc {
   font-size: 0.78rem;
   color: var(--mist);
   line-height: 1.6;
+
   flex: 1;
+
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+/* Footer: price + condition */
 .part-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding-top: 0.5rem;
   border-top: 1px solid var(--border-lt);
 }
@@ -288,28 +362,36 @@ main { flex: 1; }
   text-transform: uppercase;
 }
 
+/* Sold badge overlay */
 .sold-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
+
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+
   background: var(--bark);
   color: var(--cream);
   padding: 3px 8px;
 }
 
+/* Image count label */
 .img-count {
   font-size: 0.65rem;
   color: var(--tan);
   letter-spacing: 0.06em;
 }
 
-/* ── Hidden cards (filter) ──────────────────────────── */
-.part-card[hidden] { display: none; }
+/* Hidden cards (JS filtering) */
+.part-card[hidden] {
+  display: none;
+}
 
-/* ── Contact section ────────────────────────────────── */
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
 .contact-section {
   border-top: 1px solid var(--border);
   padding: 3rem 0;
@@ -334,14 +416,18 @@ main { flex: 1; }
 
 .contact-link {
   display: inline-block;
+
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+
   padding: 0.6rem 1.5rem;
+
   border: 1px solid var(--rust);
   color: var(--rust);
   text-decoration: none;
+
   transition: all 0.15s;
 }
 
@@ -350,9 +436,14 @@ main { flex: 1; }
   color: var(--cream);
 }
 
-/* ── Part detail page ───────────────────────────────── */
-.part-detail { padding: 2.5rem 0 4rem; }
+/* =========================================================
+   PART DETAIL PAGE
+========================================================= */
+.part-detail {
+  padding: 2.5rem 0 4rem;
+}
 
+/* Breadcrumb navigation */
 .breadcrumb {
   font-size: 0.7rem;
   color: var(--mist);
@@ -360,10 +451,19 @@ main { flex: 1; }
   letter-spacing: 0.06em;
 }
 
-.breadcrumb a { text-decoration: none; }
-.breadcrumb a:hover { color: var(--rust); }
-.breadcrumb span { margin: 0 0.4rem; }
+.breadcrumb a {
+  text-decoration: none;
+}
 
+.breadcrumb a:hover {
+  color: var(--rust);
+}
+
+.breadcrumb span {
+  margin: 0 0.4rem;
+}
+
+/* Layout: image + info */
 .detail-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -371,12 +471,22 @@ main { flex: 1; }
   align-items: start;
 }
 
+/* Mobile layout */
 @media (max-width: 680px) {
-  .detail-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
-/* Photo gallery */
-.gallery { display: flex; flex-direction: column; gap: 0.5rem; }
+/* =========================================================
+   GALLERY
+========================================================= */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 .gallery-main {
   aspect-ratio: 4/3;
@@ -387,22 +497,28 @@ main { flex: 1; }
 }
 
 .gallery-main img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
 }
 
+/* Placeholder state */
 .gallery-placeholder {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: var(--tan);
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
+/* Thumbnails */
 .gallery-thumbs {
   display: flex;
   gap: 0.5rem;
@@ -412,21 +528,37 @@ main { flex: 1; }
 .gallery-thumb {
   width: 64px;
   height: 64px;
+
   border: 1px solid var(--border);
   overflow: hidden;
+
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.15s;
+
   background: var(--warm-off);
 }
 
 .gallery-thumb:hover,
-.gallery-thumb.active { opacity: 1; border-color: var(--rust); }
+.gallery-thumb.active {
+  opacity: 1;
+  border-color: var(--rust);
+}
 
-.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-/* Detail info */
-.detail-info { display: flex; flex-direction: column; gap: 1.25rem; }
+/* =========================================================
+   DETAIL INFO PANEL
+========================================================= */
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 
 .detail-header h1 {
   font-family: var(--font-serif);
@@ -456,6 +588,7 @@ main { flex: 1; }
   color: var(--mist);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+
   border-left: 1px solid var(--border);
   padding-left: 0.75rem;
 }
@@ -464,6 +597,7 @@ main { flex: 1; }
   font-size: 0.82rem;
   color: var(--mist);
   line-height: 1.75;
+
   border-top: 1px solid var(--border-lt);
   padding-top: 1.25rem;
 }
@@ -471,8 +605,10 @@ main { flex: 1; }
 .detail-notes {
   font-size: 0.75rem;
   color: var(--mist);
+
   background: var(--warm-off);
   border-left: 2px solid var(--tan);
+
   padding: 0.75rem 1rem;
   line-height: 1.6;
 }
@@ -481,9 +617,15 @@ main { flex: 1; }
   padding-top: 0.5rem;
 }
 
-.detail-contact .contact-link { width: 100%; text-align: center; display: block; }
+.detail-contact .contact-link {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
 
-/* ── Footer ─────────────────────────────────────────── */
+/* =========================================================
+   FOOTER
+========================================================= */
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem 2rem;
@@ -496,9 +638,14 @@ main { flex: 1; }
   letter-spacing: 0.04em;
 }
 
-.footer-note { margin-top: 0.25rem; opacity: 0.6; }
+.footer-note {
+  margin-top: 0.25rem;
+  opacity: 0.6;
+}
 
-/* ── Responsive ─────────────────────────────────────── */
+/* =========================================================
+   RESPONSIVE OVERRIDES
+========================================================= */
 @media (max-width: 600px) {
   .site-header { padding: 0.875rem 1rem; }
   .container { padding: 0 1rem; }
