@@ -33,38 +33,29 @@ a {
      These are your named colors. Change the hex values here
      and the whole site updates. Nothing else needs touching. */
 
-  --cream:    #F5F0E8; /* BACKGROUND COLOR → the warm off-white used for the page background and card fills.
-                          Options: cooler white #F8F8F4 | pure white #FFFFFF | darker parchment #EDE6D6 */
+  --cream:    #FFFFFF; /* BACKGROUND → flat white page and card background.
+                          Options: near-white #FAFAFA | very light grey #F5F5F5 */
 
-  --warm-off: #EDE7D9; /* HOVER / SURFACE COLOR → slightly darker than cream, used on card hover and secondary surfaces.
-                          Options: try #E8E0CE for more contrast on hover | #F0EBE0 for subtler hover */
+  --warm-off: #F0F0F0; /* HOVER / SURFACE → light grey for card hover states and secondary surfaces */
 
-  --tan:      #C8B99A; /* ACCENT NEUTRAL → used for thumbnail borders, image count labels, notes callout border.
-                          A mid-tone warm brown. Options: lighter #D4C4A8 | darker #B0A080 */
+  --tan:      #888888; /* ACCENT NEUTRAL → Porsche Slate, used for placeholders and secondary labels */
 
-  --rust:     #8B4513; /* PRIMARY ACCENT → the main rust/saddle-brown used for prices, the logo mark, active filter buttons, and contact button border.
-                          This is your most important brand color. Options: deeper #6B3410 | warmer #9B4E18 | more orange #A0521A */
+  --rust:     #CC0000; /* PRIMARY ACCENT → Porsche Signal Red. Prices, logo mark, active buttons, contact link.
+                          Options: deeper #AA0000 | brighter #DD0000 */
 
-  --rust-mid: #A0522D; /* HOVER ACCENT → slightly lighter rust used on filter button hover state.
-                          Options: keep it close to --rust, just slightly lighter/warmer */
+  --rust-mid: #AA0000; /* HOVER ACCENT → deeper red for hover states */
 
-  --rust-lt:  #D2691E; /* LIGHT RUST → currently defined but not heavily used. Available for highlights or links.
-                          Options: use as a hover color for text links */
+  --rust-lt:  #DD2222; /* LIGHT RED → available for highlights */
 
-  --bark:     #3D2B1F; /* DARK BROWN → used for headings, part names, section titles. Warmer than black.
-                          Options: true black #000000 | slightly lighter #4A3428 | cooler dark #2C2420 */
+  --bark:     #111111; /* DARK → near-black for headings and part names */
 
-  --ink:      #1C1410; /* BODY TEXT COLOR → near-black for all body text. Warmer than pure black, easier to read.
-                          Options: pure black #000000 | softer #2A2018 */
+  --ink:      #1A1A1A; /* BODY TEXT → near-black */
 
-  --mist:     #7A6E62; /* SECONDARY TEXT → used for descriptions, metadata, nav links, labels. A warm mid-grey.
-                          Options: cooler grey #6E6E6E | darker #5A5048 | lighter #9A8E82 */
+  --mist:     #666666; /* SECONDARY TEXT → mid-grey for descriptions, metadata, labels */
 
-  --border:   #D4C9B5; /* BORDER COLOR → used for most dividing lines and card borders.
-                          Options: more visible #C0B49E | subtler #E0D8C8 */
+  --border:   #CCCCCC; /* BORDER → mid-grey for dividers and card borders */
 
-  --border-lt:#E8E0D0; /* LIGHT BORDER → used for subtle internal dividers (e.g. card footer line).
-                          Options: even subtler #EDE8E0 | remove distinction and just use --border everywhere */
+  --border-lt:#E0E0E0; /* LIGHT BORDER → subtle internal dividers */
 
 
   /* ── Category color system (tag pills) ────────────────
@@ -72,27 +63,22 @@ a {
      Pattern: light warm tint bg + dark saturated text from same hue family.
      To add a new category: add two variables here, then add a CSS class below. */
 
-  --cat-drivetrain-bg: #F0E8DC; --cat-drivetrain-tx: #6B3A1F; /* DRIVETRAIN TAG → warm tan/brown tones */
-  --cat-suspension-bg: #E8EDD8; --cat-suspension-tx: #3A5220; /* SUSPENSION TAG → muted olive/green tones */
-  --cat-brakes-bg:     #F0E4D4; --cat-brakes-tx:     #7A3B0E; /* BRAKES TAG → warm amber/orange tones */
-  --cat-wheels-bg:     #E4E4F0; --cat-wheels-tx:     #2E2E6B; /* WHEELS TAG → cool blue-purple tones */
-  --cat-electrical-bg: #EDE4F0; --cat-electrical-tx: #52206B; /* ELECTRICAL TAG → purple tones */
-  --cat-body-bg:       #E4F0EC; --cat-body-tx:       #1A5040; /* BODY TAG → teal/green tones */
-  --cat-interior-bg:   #F0ECE4; --cat-interior-tx:   #5C4A28; /* INTERIOR TAG → warm neutral brown */
-  --cat-other-bg:      #EBEBEB; --cat-other-tx:      #4A4A4A; /* OTHER TAG → neutral grey */
+  --cat-drivetrain-bg: #EEEEEE; --cat-drivetrain-tx: #333333; /* DRIVETRAIN TAG → light grey */
+  --cat-suspension-bg: #E4EDE0; --cat-suspension-tx: #264018; /* SUSPENSION TAG → muted green */
+  --cat-brakes-bg:     #FAECEC; --cat-brakes-tx:     #880000; /* BRAKES TAG → muted red */
+  --cat-wheels-bg:     #E4E4F4; --cat-wheels-tx:     #1A1A66; /* WHEELS TAG → muted blue */
+  --cat-electrical-bg: #EEE8F8; --cat-electrical-tx: #44186E; /* ELECTRICAL TAG → muted purple */
+  --cat-body-bg:       #E4F0EC; --cat-body-tx:       #144038; /* BODY TAG → muted teal */
+  --cat-interior-bg:   #F4EEE4; --cat-interior-tx:   #4A3018; /* INTERIOR TAG → warm neutral */
+  --cat-other-bg:      #EEEEEE; --cat-other-tx:      #444444; /* OTHER TAG → neutral grey */
 
 
   /* ── Typography ──────────────────────────────────────── */
 
-  --font-mono:  'DM Mono', monospace; /* MONOSPACE FONT → used for all body text, labels, nav, descriptions.
-                                         Gives the site a technical/workshop feel.
-                                         Options: 'IBM Plex Mono' | 'Courier Prime' | 'Space Mono' (more retro) */
+  --font-mono:  'Courier New', Courier, monospace; /* BODY FONT → classic typewriter mono, no external dependency.
+                                                       Options: 'Courier Prime' (Google Font, more refined) */
 
-  --font-serif: Georgia, 'Times New Roman', serif; /* SERIF FONT → used for headings and part names only.
-                                                      Adds editorial warmth against the mono body text.
-                                                      Options: 'Playfair Display' (Google Font, more elegant) |
-                                                               'Libre Baskerville' (Google Font, sturdy) |
-                                                               'IM Fell English' (Google Font, vintage feel) */
+  --font-serif: Georgia, 'Times New Roman', serif; /* HEADING FONT → system serif for headings and part names */
 
   /* ── Layout ──────────────────────────────────────────── */
 
@@ -119,8 +105,7 @@ body {
   background: var(--cream); /* PAGE BACKGROUND → the warm off-white behind everything */
   color: var(--ink);         /* DEFAULT TEXT COLOR → applies to all text that doesn't have its own color set */
   font-family: var(--font-mono); /* DEFAULT FONT → everything uses the monospace font unless overridden */
-  font-weight: 300;          /* FONT WEIGHT → 300 = light/thin. Makes the mono font feel refined rather than heavy.
-                                Options: 400 = regular (more readable at small sizes) | 300 = light (current, elegant) */
+  font-weight: 400;          /* FONT WEIGHT → regular. Courier New doesn't have a light variant. */
   line-height: 1.65;         /* LINE HEIGHT → space between lines of body text. 1.65 = comfortable reading rhythm.
                                 Options: 1.5 (tighter) | 1.8 (more airy/editorial) */
   min-height: 100vh;         /* MIN HEIGHT → body is at least as tall as the viewport. Keeps footer at bottom on short pages. */
@@ -134,19 +119,15 @@ body {
 ========================================================= */
 
 .site-header {
-  border-bottom: 1px solid var(--border); /* BOTTOM LINE → thin divider separating header from page content.
-                                             Options: remove for no line | 2px for stronger separation */
-  padding: 1rem 2rem; /* INNER SPACING → 1rem top/bottom, 2rem left/right. Controls header height and side breathing room.
-                         Options: 0.75rem 1.5rem (more compact) | 1.25rem 2rem (taller) */
-  display: flex;                  /* LAYOUT → puts logo and nav side by side */
-  align-items: center;            /* VERTICAL ALIGNMENT → logo and nav aligned to vertical center */
-  justify-content: space-between; /* HORIZONTAL LAYOUT → logo pushed to left, nav pushed to right */
-  background: var(--cream);       /* HEADER BACKGROUND → matches page so it's invisible until you scroll */
-  position: sticky;               /* STICKY → header stays at top of screen as you scroll down.
-                                     Options: remove 'sticky' and 'top: 0' to make it scroll away with the page */
-  top: 0;                         /* STICK POSITION → sticks to the very top of the viewport */
-  z-index: 100;                   /* LAYER ORDER → ensures header stays above all other content when overlapping.
-                                     Higher numbers = in front. 100 is safely above most content. */
+  border-bottom: 2px solid var(--border); /* BOTTOM LINE → 2px divider, classic toolbar separation */
+  padding: 0.875rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F4F4F4;             /* HEADER BACKGROUND → light grey toolbar, classic web convention */
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .site-logo {
@@ -184,19 +165,17 @@ body {
 }
 
 .site-nav a {
-  font-size: 0.75rem;       /* SIZE → 12px. Small nav links feel refined.
-                               Options: 0.8rem for slightly more readable */
-  font-weight: 400;          /* WEIGHT → regular */
-  color: var(--mist);        /* COLOR → muted by default, darkens on hover */
-  text-decoration: none;     /* STYLE → no underline on nav links */
-  letter-spacing: 0.08em;    /* SPACING → slightly spread, like a label */
-  text-transform: uppercase;  /* CASE → all caps for nav items */
-  transition: color 0.15s;   /* ANIMATION → color change on hover takes 0.15 seconds (smooth, not instant).
-                                Options: 0.1s (snappier) | 0.3s (slower, more dramatic) */
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--mist);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .site-nav a:hover {
-  color: var(--ink); /* HOVER COLOR → darkens to near-black on hover. */
+  color: var(--ink);
+  text-decoration: underline;
 }
 
 
@@ -293,17 +272,16 @@ main {
 }
 
 .filter-btn {
-  font-family: var(--font-mono); /* FONT → matches site body font */
-  font-size: 0.7rem;             /* SIZE → small */
-  font-weight: 400;              /* WEIGHT → regular */
-  letter-spacing: 0.06em;        /* SPACING → slightly spread */
-  padding: 4px 12px;             /* INNER SPACING → controls button size. Options: 6px 16px for chunkier buttons */
-  border: 1px solid var(--border); /* BORDER → thin outline */
-  background: transparent;        /* BACKGROUND → hollow by default */
-  color: var(--mist);             /* TEXT COLOR → muted by default */
-  cursor: pointer;                /* CURSOR → hand cursor on hover (signals it's clickable) */
-  transition: all 0.15s;          /* ANIMATION → smooth transition on all properties when state changes */
-  text-transform: lowercase;       /* CASE → lowercase filter labels feel more casual/modern. Options: uppercase */
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--mist);
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .filter-btn:hover {
@@ -344,17 +322,12 @@ main {
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  transition: background 0.15s;
   position: relative;
   overflow: hidden;
 }
 
 .part-card:hover {
   background: var(--warm-off);
-}
-
-.part-card:hover .part-card-photo img {
-  transform: scale(1.04);
 }
 
 .part-card.sold {
@@ -375,7 +348,6 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.25s ease;
 }
 
 .part-card-no-photo {
@@ -512,10 +484,9 @@ main {
   letter-spacing: 0.08em; /* SPACING → spread */
   text-transform: uppercase; /* CASE → caps */
   padding: 0.6rem 1.5rem;  /* INNER SPACING → controls button size. Options: 0.75rem 2rem for a chunkier button */
-  border: 1px solid var(--rust); /* BORDER → rust outline */
-  color: var(--rust);            /* TEXT COLOR → rust */
-  text-decoration: none;         /* STYLE → no underline */
-  transition: all 0.15s;         /* ANIMATION → smooth invert on hover */
+  border: 1px solid var(--rust);
+  color: var(--rust);
+  text-decoration: none;
 }
 
 .contact-link:hover {
@@ -621,10 +592,8 @@ main {
   border: 1px solid var(--border); /* BORDER → outline */
   overflow: hidden;          /* OVERFLOW → clips image to square */
   cursor: pointer;           /* CURSOR → hand cursor */
-  opacity: 0.6;              /* OPACITY → thumbnails are dimmed by default.
-                                Options: 0.5 (more dimmed) | 0.75 (less dimmed) */
-  transition: opacity 0.15s; /* ANIMATION → smooth opacity change */
-  background: var(--warm-off); /* BACKGROUND → while loading */
+  opacity: 0.6;
+  background: var(--warm-off);
 }
 
 .gallery-thumb:hover,
