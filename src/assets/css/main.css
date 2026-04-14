@@ -1,6 +1,6 @@
 /* =========================================================
    RESET / BASE NORMALIZATION
-   - Removes browser inconsistencies.
+   - Removes browser inconsistencies
    - Sets box model globally
 ========================================================= */
 
@@ -339,55 +339,93 @@ main {
 }
 
 .part-card {
-  background: var(--cream);  /* CARD BACKGROUND → fills over the border-colored grid background */
-  padding: 1.5rem;            /* INNER SPACING → space inside each card around the content.
-                                Options: 1.25rem (tighter) | 2rem (more generous) */
-  display: flex;              /* LAYOUT → card content in a column */
-  flex-direction: column;     /* DIRECTION → stacks name, description, footer vertically */
-  gap: 0.75rem;               /* GAP → space between each element inside the card */
-  text-decoration: none;      /* STYLE → removes link underline (cards are <a> tags) */
-  color: inherit;             /* COLOR → card text inherits from parent (doesn't turn link-blue) */
-  transition: background 0.15s; /* ANIMATION → smooth background change on hover */
-  position: relative;         /* POSITION → allows absolute positioning of the "Sold" badge inside */
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+  position: relative;
+  overflow: hidden;
 }
 
 .part-card:hover {
-  background: var(--warm-off); /* HOVER BACKGROUND → slightly darker cream on hover. Subtle feedback.
-                                  Options: var(--tan) for a stronger hover effect */
+  background: var(--warm-off);
+}
+
+.part-card:hover .part-card-photo img {
+  transform: scale(1.04);
 }
 
 .part-card.sold {
-  opacity: 0.5;        /* OPACITY → fades sold cards to 50%. They're visible but clearly secondary.
-                          Options: 0.3 (more faded) | 0.6 (less faded) */
-  pointer-events: none; /* INTERACTION → disables clicking/hovering on sold cards */
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.part-card-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--tan);
+  flex-shrink: 0;
+}
+
+.part-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.part-card-no-photo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--mist);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.part-card-info {
+  padding: 0.875rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
 }
 
 .part-card-top {
-  display: flex;                  /* LAYOUT → puts title and category tag side by side */
-  justify-content: space-between; /* SPACING → title on left, tag pushed to right */
-  align-items: flex-start;        /* ALIGNMENT → both align to top (tag doesn't stretch to match title height) */
-  gap: 0.5rem;                    /* GAP → space between title and tag */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .part-name {
-  font-family: var(--font-serif); /* FONT → serif for part titles, like the headings */
-  font-style: italic;             /* STYLE → italic adds character. Options: normal for upright */
-  font-size: 1.1rem;              /* SIZE → 17.6px. Slightly larger than body text.
-                                     Options: 1rem (same as body) | 1.25rem (more prominent) */
-  font-weight: 400;               /* WEIGHT → regular serif */
-  color: var(--bark);             /* COLOR → dark brown, same as headings */
-  line-height: 1.25;              /* LINE HEIGHT → tight for a title that might wrap to two lines */
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--bark);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cat-tag {
-  font-size: 0.6rem;      /* SIZE → very small. Tag labels are metadata, not content.
-                             Options: 0.65rem for slightly larger */
-  font-weight: 500;        /* WEIGHT → medium. Slightly bolder than body so it's legible at small size */
-  letter-spacing: 0.08em;  /* SPACING → spread, label style */
-  text-transform: uppercase; /* CASE → all caps */
-  padding: 3px 8px;         /* INNER SPACING → small pill. Options: 4px 10px for slightly bigger tag */
-  white-space: nowrap;      /* WRAPPING → tag text never breaks to a new line */
-  flex-shrink: 0;           /* FLEX → tag doesn't shrink if the title is long. Tag always stays full size. */
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Category color mapping — each maps to the variables defined in :root */
@@ -400,59 +438,39 @@ main {
 .cat-interior   { background: var(--cat-interior-bg);   color: var(--cat-interior-tx); }
 .cat-other      { background: var(--cat-other-bg);      color: var(--cat-other-tx); }
 
-.part-desc {
-  font-size: 0.78rem;    /* SIZE → 12.5px. Small description text.
-                            Options: 0.8rem (14px, more readable) | 0.75rem (12px, very small) */
-  color: var(--mist);    /* COLOR → muted, clearly secondary to the title */
-  line-height: 1.6;      /* LINE HEIGHT → comfortable for a few lines of text */
-  flex: 1;               /* GROWTH → description stretches to fill available card space.
-                            This pushes the price/condition footer to the bottom of every card, keeping them aligned. */
-  display: -webkit-box;         /* CLAMP SETUP → these three properties together enable line clamping */
-  -webkit-line-clamp: 3;        /* LINE CLAMP → truncates text after 3 lines and adds "..." automatically.
-                                   Options: 2 (tighter cards) | 4 (more description visible) */
-  -webkit-box-orient: vertical; /* CLAMP SETUP → required for the line clamp to work */
-  overflow: hidden;             /* CLAMP SETUP → hides the text beyond the clamp */
-}
-
 .part-footer {
-  display: flex;                  /* LAYOUT → price and condition side by side */
-  justify-content: space-between; /* SPACING → price on left, condition on right */
-  align-items: center;            /* ALIGNMENT → vertically centered */
-  padding-top: 0.5rem;            /* SPACE ABOVE → breathing room between description and footer */
-  border-top: 1px solid var(--border-lt); /* TOP LINE → subtle divider above the price row */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-lt);
 }
 
 .part-price {
-  font-size: 0.85rem;   /* SIZE → slightly larger than labels, price is important content */
-  font-weight: 500;      /* WEIGHT → medium/bold. Price should stand out.
-                            Options: 400 for lighter feel | 700 for strong emphasis */
-  color: var(--rust);    /* COLOR → rust accent. Price is the key call-to-action info. */
-  letter-spacing: 0.02em; /* SPACING → very slightly spread, makes numbers feel more open */
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--rust);
+  letter-spacing: 0.02em;
 }
 
 .part-condition {
-  font-size: 0.65rem;       /* SIZE → very small metadata */
-  color: var(--mist);        /* COLOR → muted */
-  letter-spacing: 0.06em;    /* SPACING → spread, label style */
-  text-transform: uppercase;  /* CASE → caps */
+  font-size: 0.65rem;
+  color: var(--mist);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .sold-badge {
-  position: absolute; /* POSITION → removed from normal flow, placed relative to the card */
-  top: 1rem;          /* FROM TOP → 1rem from the top edge of the card */
-  right: 1rem;        /* FROM RIGHT → 1rem from the right edge of the card */
-  font-size: 0.6rem;        /* SIZE → small */
-  letter-spacing: 0.1em;    /* SPACING → spread */
-  text-transform: uppercase; /* CASE → SOLD */
-  background: var(--bark);   /* BACKGROUND → dark brown. High contrast, clearly "done". Options: var(--rust) for rust badge */
-  color: var(--cream);       /* TEXT COLOR → light on dark */
-  padding: 3px 8px;          /* INNER SPACING → slim badge */
-}
-
-.img-count {
-  font-size: 0.65rem;  /* SIZE → very small */
-  color: var(--tan);   /* COLOR → tan/neutral. Subtle hint about photos. */
-  letter-spacing: 0.06em; /* SPACING → spread */
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--bark);
+  color: var(--cream);
+  padding: 3px 8px;
 }
 
 .part-card[hidden] {

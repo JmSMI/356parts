@@ -39,21 +39,28 @@ title: Porsche 356 Parts — Vancouver, BC
             <span class="sold-badge">Sold</span>
           {% endif %}
 
-          <div class="part-card-top">
-            <span class="part-name">{{ part.name }}</span>
-            <span class="cat-tag {{ part.category | categoryColor }}">{{ part.category }}</span>
+          <div class="part-card-photo">
+            {% if part.images and part.images.length > 0 %}
+              {% if 'http' in part.images[0] %}
+                <img src="{{ part.images[0] }}" alt="{{ part.name }}" loading="lazy">
+              {% else %}
+                <img src="{{ ('/parts/' + part.id + '/images/' + part.images[0]) | url }}" alt="{{ part.name }}" loading="lazy">
+              {% endif %}
+            {% else %}
+              <div class="part-card-no-photo">No photo yet</div>
+            {% endif %}
           </div>
 
-          <p class="part-desc">{{ part.description }}</p>
-
-          <div class="part-footer">
-            <span class="part-price">{{ part.price }}</span>
-            <span class="part-condition">{{ part.condition }}</span>
+          <div class="part-card-info">
+            <div class="part-card-top">
+              <span class="part-name">{{ part.name }}</span>
+              <span class="cat-tag {{ part.category | categoryColor }}">{{ part.category }}</span>
+            </div>
+            <div class="part-footer">
+              <span class="part-price">{{ part.price }}</span>
+              <span class="part-condition">{{ part.condition }}</span>
+            </div>
           </div>
-
-          {% if part.images and part.images.length > 0 %}
-            <span class="img-count">{{ part.images.length }} photo{% if part.images.length != 1 %}s{% endif %}</span>
-          {% endif %}
 
         </a>
       {% endfor %}
