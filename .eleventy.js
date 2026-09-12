@@ -1,5 +1,13 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addWatchTarget("src/assets/warehouse/");
+  eleventyConfig.addGlobalData("warehousePhotos", () => {
+    const fs = require("node:fs");
+    const path = require("node:path");
+    return fs.readdirSync(path.join(__dirname, "src/assets/warehouse"), { withFileTypes: true })
+      .filter(file => file.isFile() && /\.(jpe?g|png|webp|gif|avif)$/i.test(file.name))
+      .map(file => file.name).sort((a, b) => a.localeCompare(b, "en", { numeric: true }));
+  });
   eleventyConfig.addPassthroughCopy("src/parts/**/images/*");
   eleventyConfig.setNunjucksEnvironmentOptions({ autoescape: true });
   eleventyConfig.addFilter("encodeUri", value => encodeURIComponent(value));

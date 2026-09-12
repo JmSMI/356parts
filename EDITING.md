@@ -18,19 +18,11 @@ Edit `src/_data/wanted.json`. Replace the empty `[]` with entries like this:
 
 ## Warehouse photos
 
-Put photos in `src/assets/warehouse/`. Then edit `src/_data/warehouse.json`:
+Put JPG, PNG, WebP, GIF, or AVIF photos directly in `src/assets/warehouse/`. They automatically appear in the untitled collage at the bottom of the main page, in filename order. No JSON entries are needed; the old `warehouse.json` is no longer used. Rename files with numeric prefixes if you want to control their order.
 
-```json
-[
-  {
-    "image": "shed-overview.jpg",
-    "caption": "Shed overview",
-    "alt": "Shelves and boxes of parts inside the shed"
-  }
-]
-```
+Rebuild with `npm run build`, or restart `npm start` after configuration changes. Commit the photos along with your changes.
 
-Use the exact filename including capitalization. Captions are optional; `alt` describes the photo for accessibility. Photos appear in JSON order and open larger on the same page when clicked. Both sections start empty, with no invented wanted items or photos.
+Parts wanted uses only the name and description; budget is no longer displayed.
 
 ## Parts for sale
 
