@@ -157,15 +157,16 @@
   },
   {
     "id": "drum-1",
-    "name": "Drum brakes",
+    "name": "Rear drum brakes",
     "category": "brakes",
     "price": "tbd",
     "quantity": 4,
     "condition": "",
     "status": "available",
-    "description": "Several available. Rear. Sold in pairs.",
+    "description": "Sold in pairs.",
     "notes": "",
     "images": [
+      "IMG_4039.jpg",
       "drum-1-1-rear-side.JPG",
       "drum-1-1-rear-inner.JPG",
       "drum-1-1-rear-markings.JPG",
