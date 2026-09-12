@@ -124,14 +124,14 @@
   },
   {
     "id": "drum-3",
-    "name": "356 exhaust",
-    "category": "exhaust",
+    "name": "carrera drum brakes",
+    "category": "brakes",
     "price": "tbd",
     "quantity": 2,
     "condition": "",
     "status": "available",
     "description": "Two available, sold as a pair.",
-    "notes": "Vancouver pickup preferred.",
+    "notes": "Vancouver pickup.",
     "images": [
       "3-1-markingsIMG_3960.JPG",
       "3-1-carrera-drum-1.JPG",
