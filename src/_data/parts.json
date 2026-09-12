@@ -7,9 +7,10 @@
     "quantity": 1,
     "condition": "",
     "status": "available",
-    "description": "",
+    "description": "May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. Some dents in the shroud body around the fan opening. As pictured.",
     "notes": "",
     "images": [
+      "IMG_4046.JPG",
       "IMG_4034.JPG",
       "IMG_4033.JPG",
       "IMG_4044.JPG"
@@ -23,7 +24,7 @@
     "quantity": 1,
     "condition": "",
     "status": "available",
-    "description": "",
+    "description": "May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. As pictured.",
     "notes": "",
     "images": [
       "IMG_4045.JPG",
@@ -33,7 +34,7 @@
       "IMG_4043.JPG"
     ]
   },
-    {
+  {
     "id": "drum-2a",
     "name": "Front drums",
     "category": "brakes",
@@ -44,6 +45,7 @@
     "description": "",
     "notes": "",
     "images": [
+      "IMG_4041.JPG",
       "IMG_4041.JPG"
     ]
   },
