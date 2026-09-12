@@ -60,6 +60,7 @@ button, input, select, textarea { font: inherit; }
 .parts-grid { background: transparent; border: 0; gap: 1px; }
 .part-card { outline: 1px solid var(--border); }
 .sale-status { font-size: .8125rem; color: var(--mist); }
+.category-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
 .wanted-bullets { padding-left: 1.25rem; }
 .wanted-bullets li { margin: .35rem 0; }
 .warehouse-collage { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; padding: 0 0 2rem; }

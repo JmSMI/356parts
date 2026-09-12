@@ -57,7 +57,9 @@ eleventyComputed:
       <!-- Info -->
       <div class="detail-info">
         <div class="detail-header">
-          <span class="cat-tag {{ part.category | categoryColor }}">{{ part.category }}</span>
+          <div class="category-tags">
+            {% for cat in part | partCategories %}<span class="cat-tag {{ cat | categoryColor }}">{{ cat }}</span>{% endfor %}
+          </div>
           <h1>{{ part.name }}</h1>
           <div class="detail-meta">
             <span class="detail-price">{{ part.price }}</span>

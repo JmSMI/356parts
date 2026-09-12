@@ -1,5 +1,11 @@
 # Parts and photos
 
+## Multiple categories
+
+Use `"categories": ["engine", "electrical"]` in a part entry. Each label appears on the card and detail page, and either filter finds the part. Custom category names are supported.
+
+Existing `"category": "brakes"` entries still work, as do arrays such as `"category": ["engine", "electrical"]`. If both fields exist, `categories` takes precedence. Names are trimmed, lowercased, and deduplicated.
+
 ## Parts wanted
 
 Edit `src/_data/wanted.json`. Replace the empty `[]` with entries like this:

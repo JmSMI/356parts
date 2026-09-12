@@ -11,6 +11,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/parts/**/images/*");
   eleventyConfig.setNunjucksEnvironmentOptions({ autoescape: true });
   eleventyConfig.addFilter("encodeUri", value => encodeURIComponent(value));
+  eleventyConfig.addFilter("partCategories", part => {
+    const value = part.categories ?? part.category ?? [];
+    return [...new Set((Array.isArray(value) ? value : [value])
+      .filter(cat => typeof cat === "string")
+      .map(cat => cat.trim().toLowerCase()).filter(Boolean))];
+  });
 
   eleventyConfig.addFilter("categoryColor", function(cat) {
     const map = {
