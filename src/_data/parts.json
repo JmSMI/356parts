@@ -1,6 +1,21 @@
 [
   {
-    "id": "shroud-8",
+    "id": "shroud-8-2",
+    "name": "Shroud parts",
+    "category": "engine",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "",
+    "notes": "",
+    "images": [
+      "IMG_4034.JPG",
+      "IMG_4033.JPG"
+    ]
+  },
+  {
+    "id": "shroud-8-1",
     "name": "Shroud parts",
     "category": "engine",
     "price": "tbd",
@@ -147,9 +162,9 @@
   },
   {
     "id": "drum-backing-cooled-2",
-    "name": "Left/right rear scooped plates",
+    "name": "Left/right scooped plates",
     "category": "brakes",
-    "price": "$500",
+    "price": "tbd",
     "quantity": 2,
     "condition": "",
     "status": "available",
