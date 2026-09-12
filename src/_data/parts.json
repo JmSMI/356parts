@@ -1,5 +1,21 @@
 [
   {
+    "id": "shroud-8",
+    "name": "Shroud parts",
+    "category": "engine",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "",
+    "notes": "",
+    "images": [
+      "IMG_4030.JPG",
+      "IMG_4031.JPG",
+      "IMG_4032.JPG"
+    ]
+  },
+  {
     "id": "shroud-fan-7-3",
     "name": "Shroud parts",
     "category": "engine",
