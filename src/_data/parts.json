@@ -88,5 +88,22 @@
       "exhaust-13997.JPG",
       "exhaust-13994.JPG"
     ]
+  },
+  {
+    "id": "exhaust-2",
+    "name": "356 exhaust",
+    "category": "exhaust",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "More information to come.",
+    "notes": "Vancouver pickup preferred.",
+    "images": [
+      "exhaust-24006.JPG",
+      "exhaust-24007.JPG",
+      "exhaust-24008.JPG",
+      "exhaust-24009.JPG"
+    ]
   }
 ]
