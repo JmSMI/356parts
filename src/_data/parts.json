@@ -5,7 +5,7 @@
     "category": "brakes",
     "price": "pending",
     "quantity": 4,
-    "condition": "Excellent",
+    "condition": "",
     "status": "available",
     "description": "Standard 356 finned drum brakes. At least 4 available. ",
     "notes": "Vancouver pickup preferred.",
@@ -22,7 +22,7 @@
     "category": "brakes",
     "price": "pending",
     "quantity": 2,
-    "condition": "Excellent",
+    "condition": "",
     "status": "available",
     "description": "Backing plates with air scoops. 2 available (left/right). Sold as set.",
     "notes": "Vancouver pickup preferred.",
@@ -32,6 +32,43 @@
       "2-2-cooled-IMG_3975.JPG",
       "2-1-cooled-IMG_3974.JPG",
       "2-1-2-2-set-IMG_3973.JPG"
+    ]
+  },
+  {
+    "id": "drum-backing-cooled-2-full",
+    "name": "Carrera backing plates for drum brakes, restored",
+    "category": "brakes",
+    "price": "pending",
+    "quantity": 2,
+    "condition": "",
+    "status": "available",
+    "description": "Backing plates with air scoops. With 40mm pads but 60mm pads available. 2 available (left/right). Sold as set.",
+    "notes": "Vancouver pickup preferred.",
+    "images": [
+      "3-1-back-IMG_3972.JPG",
+      "3-1-back-IMG_3971.JPG",
+      "3-1-back-IMG_3970.JPG",
+      "3-2-back-IMG_3969.JPG",
+      "3-2-back-IMG_3968.JPG",
+      "3-2-back-IMG_3967.JPG",
+      "3-2-back-IMG_3966.JPG",
+      "3-2-3-1-set-back-IMG_3965.JPG"
+    ]
+  },
+  {
+    "id": "drum-finned",
+    "name": "Carrera backing plates for drum brakes",
+    "category": "brakes",
+    "price": "pending",
+    "quantity": 2,
+    "condition": "",
+    "status": "available",
+    "description": "Backing plates with air scoops. 2 available (left/right). Sold as set.",
+    "notes": "Vancouver pickup preferred.",
+    "images": [
+      "4-2-drum-IMG_3963.JPG",
+      "4-2-side-IMG_3962.JPG",
+      "4-2-topIMG_3961.JPG"
     ]
   }
 ]
