@@ -1,4 +1,33 @@
 [
+    {
+    "id": "throttle-lever-silver",
+    "name": "Throttle lever",
+    "category": "engine",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "With actuator rod as pictured",
+    "notes": "",
+    "images": [
+      "IMG_4014.JPG",
+      "IMG_4013.JPG"
+    ]
+  },
+  {
+    "id": "engine-mount",
+    "name": "Engine mount",
+    "category": "engine",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "Excellent condition.",
+    "notes": "",
+    "images": [
+      "IMG_4015.JPG"
+    ]
+  },
   {
     "id": "throttle-lever-black",
     "name": "Throttle lever",
@@ -24,7 +53,7 @@
     "condition": "",
     "status": "available",
     "description": "Several available. Rear. Sold in pairs.",
-    "notes": "Vancouver pickup.",
+    "notes": "",
     "images": [
       "drum-1-1-rear-side.JPG",
       "drum-1-1-rear-inner.JPG",
@@ -41,7 +70,7 @@
     "condition": "",
     "status": "available",
     "description": "Sold as pair. Left and right side.",
-    "notes": "Vancouver pickup.",
+    "notes": "",
     "images": [
       "2-2-IMG_3977.JPG",
       "2-1-IMG_3976.JPG",
@@ -59,7 +88,7 @@
     "condition": "",
     "status": "available",
     "description": "Sold as pair. Left and right side. Restored.",
-    "notes": "Vancouver pickup.",
+    "notes": "",
     "images": [
       "3-1-back-IMG_3972.JPG",
       "3-1-back-IMG_3971.JPG",
@@ -80,7 +109,7 @@
     "condition": "",
     "status": "available",
     "description": "Rear. Sold as pair.",
-    "notes": "Vancouver pickup.",
+    "notes": "",
     "images": [
       "4-2-drum-IMG_3963.JPG",
       "4-2-side-IMG_3962.JPG",
@@ -96,7 +125,7 @@
     "condition": "",
     "status": "available",
     "description": "More information to come.",
-    "notes": "Vancouver pickup preferred.",
+    "notes": "",
     "images": [
       "exhaust-13992.JPG",
       "exhaust-13996.JPG",
@@ -114,7 +143,7 @@
     "condition": "",
     "status": "available",
     "description": "More information to come. Message me if you want a faster answer.",
-    "notes": "Vancouver pickup preferred.",
+    "notes": "",
     "images": [
       "exhaust-24006.JPG",
       "exhaust-24007.JPG",
@@ -131,7 +160,7 @@
     "condition": "",
     "status": "available",
     "description": "Two available, sold as a pair.",
-    "notes": "Vancouver pickup.",
+    "notes": "",
     "images": [
       "3-1-markingsIMG_3960.JPG",
       "3-1-carrera-drum-1.JPG",
