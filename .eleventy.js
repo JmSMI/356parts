@@ -1,6 +1,8 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy({ "src/parts": "parts" });
+  eleventyConfig.addPassthroughCopy("src/parts/**/images/*");
+  eleventyConfig.setNunjucksEnvironmentOptions({ autoescape: true });
+  eleventyConfig.addFilter("encodeUri", value => encodeURIComponent(value));
 
   eleventyConfig.addFilter("categoryColor", function(cat) {
     const map = {

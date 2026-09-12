@@ -6,8 +6,8 @@ title: Porsche 356 Parts — Vancouver, BC
 <div class="container">
 
   <div class="page-intro">
-    <h1>Surplus parts from a 356 restoration</h1>
-    <p>My father's Porsche 356 is being brought back. These pieces didn't make the cut — sold as-is, no warranty, buyer inspects. Vancouver pickup preferred; open to discussing shipping within Canada.</p>
+    <h1>Porsche 356 Parts</h1>
+    <p>Used parts for sale in Vancouver, BC. Browse the listings below. Local pickup preferred; shipping within Canada by arrangement.</p>
     <div class="meta-chips">
       <span class="chip">Vancouver, BC</span>
       <span class="chip">Canada only</span>
@@ -17,13 +17,16 @@ title: Porsche 356 Parts — Vancouver, BC
   </div>
 
   <div class="filter-bar">
+    <label class="search-label" for="part-search">Find a part
+      <input id="part-search" type="search" placeholder="Search names, descriptions, categories…">
+    </label>
     <span class="filter-label">Filter:</span>
-    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
     {% set cats = [] %}
     {% for part in parts %}
       {% if part.category not in cats %}
         {% set cats = cats.concat([part.category]) %}
-        <button class="filter-btn" data-filter="{{ part.category }}">{{ part.category }}</button>
+        <button class="filter-btn" data-filter="{{ part.category }}" aria-pressed="false">{{ part.category }}</button>
       {% endif %}
     {% endfor %}
   </div>
@@ -33,7 +36,8 @@ title: Porsche 356 Parts — Vancouver, BC
       {% for part in parts %}
         <a href="{{ ('/parts/' + part.id + '/') | url }}"
            class="part-card{% if part.status == 'sold' %} sold{% endif %}"
-           data-category="{{ part.category }}">
+           data-category="{{ part.category }}"
+           data-search="{{ part.name }} {{ part.category }} {{ part.description }} {{ part.condition }} {{ part.notes }}">
 
           {% if part.status == 'sold' %}
             <span class="sold-badge">Sold</span>
@@ -67,10 +71,11 @@ title: Porsche 356 Parts — Vancouver, BC
     </div>
   </div>
 
+  <p id="filter-result" role="status" aria-live="polite"></p>
   <div class="contact-section" id="contact">
     <h2>Get in touch</h2>
     <p>Serious inquiries only. Please mention which part you're after and your general location. I'll respond within a day or two.</p>
-    <a href="mailto:YOUR_EMAIL@example.com?subject=356 Parts inquiry" class="contact-link">Send an email</a>
+    <a href="mailto:jpmoffat@gmail.com?subject=356%20Parts%20inquiry" class="contact-link">Send an email</a>
   </div>
 
 </div>
@@ -78,19 +83,27 @@ title: Porsche 356 Parts — Vancouver, BC
 <script>
   const btns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.part-card');
+  const search = document.getElementById('part-search');
+  let category = 'all';
+  function applyFilters() {
+    const words = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let count = 0;
+    cards.forEach(card => {
+      card.hidden = !((category === 'all' || card.dataset.category === category) && words.every(word => card.dataset.search.toLowerCase().includes(word)));
+      if (!card.hidden) count++;
+    });
+    document.getElementById('filter-result').textContent = count ? `${count} ${count === 1 ? 'part' : 'parts'} found` : 'No matching parts. Try another keyword or category.';
+  }
+  search.addEventListener('input', applyFilters);
 
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
-      btns.forEach(b => b.classList.remove('active'));
+      btns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
       btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.removeAttribute('hidden');
-        } else {
-          card.setAttribute('hidden', '');
-        }
-      });
+      btn.setAttribute('aria-pressed', 'true');
+      category = btn.dataset.filter;
+      applyFilters();
     });
   });
+  applyFilters();
 </script>

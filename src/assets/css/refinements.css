@@ -1,0 +1,61 @@
+/* A restrained parts-catalog treatment: warm paper, plain type, ruled sections. */
+:root {
+  --cream: #faf9f5;
+  --warm-off: #eeede7;
+  --tan: #b4b2a7;
+  --rust: #454c3e;
+  --rust-mid: #30362b;
+  --bark: #292a25;
+  --ink: #33342e;
+  --mist: #62645b;
+  --border: #c4c3b8;
+  --border-lt: #deddd3;
+  --font-mono: Arial, Helvetica, sans-serif;
+  --font-serif: Arial, Helvetica, sans-serif;
+}
+button, input, select, textarea { font: inherit; }
+.logo-mark, .part-name, .contact-section h2, .detail-header h1 { font-style: normal; font-weight: 600; }
+.page-intro h1 { font-size: clamp(1.65rem, 3vw, 2.15rem); font-weight: 700; letter-spacing: -.025em; max-width: none; }
+.page-intro p, .contact-section p, .detail-desc { font-size: 1rem; }
+.part-name { font-size: 1.1rem; }
+.part-condition, .detail-condition, .cat-tag, .chip, .filter-label { font-size: .75rem; letter-spacing: .035em; }
+.part-price, .contact-link, .filter-btn, .breadcrumb, .detail-notes { font-size: .875rem; }
+.filter-btn, .contact-link { min-height: 44px; }
+.part-card-top, .part-footer { flex-wrap: wrap; gap: .5rem; }
+.part-card.sold { pointer-events: auto; opacity: .7; }
+.part-card-no-photo { background: var(--warm-off); font-size: .8rem; }
+.gallery-main img { object-fit: contain; cursor: default; }
+.search-label { width: 100%; font-size: .875rem; font-weight: 600; }
+.search-label input { display: block; width: 100%; margin-top: .4rem; padding: .75rem; border: 1px solid var(--border); border-radius: 0; background: white; color: var(--ink); }
+#filter-result { color: var(--mist); margin: 1rem 0; font-size: .875rem; }
+:focus-visible { outline: 3px solid var(--rust); outline-offset: 4px; }
+.draft-notice { padding: .75rem 1rem; background: #fff4d6; color: #654600; font-size: .875rem; }
+.site-header { position: static; background: var(--warm-off); border-bottom: 1px solid var(--border); }
+.logo-mark { font-size: 1.35rem; font-weight: 700; }
+.logo-text { letter-spacing: .06em; font-size: .75rem; }
+.site-nav a { letter-spacing: .04em; font-size: .75rem; }
+.page-intro { padding: 2rem 0 1.4rem; border-bottom: 2px solid var(--border); }
+.page-intro p { max-width: 72ch; font-size: .9375rem; line-height: 1.6; }
+.meta-chips { gap: 0; margin-top: .85rem; }
+.chip { border: 0; padding: 0 .8rem; letter-spacing: 0; text-transform: none; }
+.chip:first-child { padding-left: 0; }
+.chip + .chip { border-left: 1px solid var(--border); }
+.filter-bar { padding: 1rem 0; }
+.search-label { font-weight: 400; }
+.search-label input { max-width: 36rem; padding: .6rem .7rem; background: #fffefa; }
+.filter-btn { background: var(--warm-off); text-transform: none; letter-spacing: 0; padding: .4rem .85rem; }
+.parts-section { padding-top: 1.25rem; }
+.part-card-photo { background: var(--warm-off); }
+.part-card-info { padding: .9rem; }
+.part-name { font-size: 1rem; line-height: 1.4; }
+.cat-tag { background: #e9e8df; color: #56594e; font-size: .6875rem; letter-spacing: .02em; }
+.part-price { color: var(--ink); font-weight: 700; }
+.part-condition { text-transform: none; letter-spacing: 0; }
+.contact-section { padding: 2rem 0; }
+.contact-section h2 { font-size: 1.25rem; }
+.contact-link { text-transform: none; letter-spacing: 0; background: var(--warm-off); }
+.draft-notice { background: #eae7dc; color: #5e5a4b; border-bottom: 1px solid #d5d1c2; font-size: .8125rem; }
+.site-footer { background: var(--warm-off); }
+.footer-note { opacity: 1; }
+@media (max-width: 420px) { .site-header { flex-wrap: wrap; gap: .5rem; } .site-nav { display: flex; gap: 1rem; } .site-nav a { margin-left: 0; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

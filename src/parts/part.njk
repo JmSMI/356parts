@@ -76,7 +76,7 @@ eleventyComputed:
 
         {% if part.status != 'sold' %}
           <div class="detail-contact">
-            <a href="mailto:YOUR_EMAIL@example.com?subject=Inquiry: {{ part.name }}" class="contact-link">
+            <a href="mailto:jpmoffat@gmail.com?subject={{ ('Inquiry: ' + part.name) | encodeUri }}" class="contact-link">
               Inquire about this part
             </a>
           </div>
