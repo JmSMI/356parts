@@ -2,7 +2,7 @@
   {
     "id": "drum-2",
     "name": "Front drums",
-    "category": "engine",
+    "category": "brakes",
     "price": "tbd",
     "quantity": 1,
     "condition": "",
@@ -94,7 +94,7 @@
   },
   {
     "id": "generator-6",
-    "name": "Generator",
+    "name": "Generator 6v",
     "category": [
       "engine",
       "electrical"
