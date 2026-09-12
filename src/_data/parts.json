@@ -63,38 +63,6 @@
     ]
   },
   {
-    "id": "shroud-fan-7-3",
-    "name": "Shroud parts",
-    "category": "engine",
-    "price": "tbd",
-    "quantity": 1,
-    "condition": "",
-    "status": "available",
-    "description": "",
-    "notes": "",
-    "images": [
-      "IMG_4022.JPG",
-      "IMG_4025.JPG",
-      "IMG_4029.JPG"
-    ]
-  },
-  {
-    "id": "shroud-fan-7-2",
-    "name": "Shroud fan",
-    "category": "engine",
-    "price": "tbd",
-    "quantity": 1,
-    "condition": "",
-    "status": "available",
-    "description": "",
-    "notes": "",
-    "images": [
-      "IMG_4028.JPG",
-      "IMG_4024.JPG",
-      "IMG_4021.JPG"
-    ]
-  },
-  {
     "id": "shroud-fan-7-1",
     "name": "Shroud parts",
     "category": "engine",
@@ -131,21 +99,6 @@
     ]
   },
   {
-    "id": "throttle-lever-silver",
-    "name": "Throttle lever",
-    "category": "engine",
-    "price": "tbd",
-    "quantity": 1,
-    "condition": "",
-    "status": "available",
-    "description": "With actuator rod as pictured",
-    "notes": "",
-    "images": [
-      "IMG_4014.JPG",
-      "IMG_4013.JPG"
-    ]
-  },
-  {
     "id": "engine-mount",
     "name": "Engine mount",
     "category": "engine",
@@ -157,22 +110,6 @@
     "notes": "",
     "images": [
       "IMG_4015.JPG"
-    ]
-  },
-  {
-    "id": "throttle-lever-black",
-    "name": "Throttle lever",
-    "category": "engine",
-    "price": "tbd",
-    "quantity": 1,
-    "condition": "",
-    "status": "available",
-    "description": "Contact for details.",
-    "notes": "",
-    "images": [
-      "throttle4012.JPG",
-      "throttle4010.JPG",
-      "throttle4011.JPG"
     ]
   },
   {
