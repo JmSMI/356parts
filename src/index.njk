@@ -96,7 +96,9 @@ title: Porsche 356 Parts — Vancouver, BC
   {% if warehousePhotos.length %}
   <section id="warehouse" class="warehouse-collage" aria-label="Warehouse photos">
     {% for photo in warehousePhotos %}
-    <img src="{{ ('/assets/warehouse/' + (photo | encodeUri)) | url }}" alt="Warehouse parts photo {{ loop.index }}" loading="lazy">
+    <a class="warehouse-tile" href="{{ ('/assets/warehouse/' + (photo | encodeUri)) | url }}" target="_blank" rel="noopener" aria-label="Open warehouse photo {{ loop.index }} full size">
+      <img src="{{ ('/assets/warehouse/' + (photo | encodeUri)) | url }}" alt="Warehouse parts photo {{ loop.index }}" loading="lazy" decoding="async" fetchpriority="low">
+    </a>
     {% endfor %}
   </section>
   {% endif %}

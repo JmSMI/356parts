@@ -62,10 +62,16 @@ button, input, select, textarea { font: inherit; }
 .sale-status { font-size: .8125rem; color: var(--mist); }
 .wanted-bullets { padding-left: 1.25rem; }
 .wanted-bullets li { margin: .35rem 0; }
-.warehouse-collage { columns: 3; column-gap: .5rem; padding: 0 0 2rem; }
-.warehouse-collage img { width: 100%; height: auto; margin-bottom: .5rem; break-inside: avoid; }
-@media (max-width: 700px) { .warehouse-collage { columns: 2; } }
-@media (max-width: 420px) { .warehouse-collage { columns: 1; } }
+.warehouse-collage { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; padding: 0 0 2rem; }
+.warehouse-tile { display: block; grid-column: span 2; aspect-ratio: 4 / 3; overflow: hidden; background: var(--warm-off); }
+.warehouse-tile:nth-child(5n + 1), .warehouse-tile:nth-child(5n + 2) { grid-column: span 3; }
+.warehouse-tile:last-child:nth-child(5n + 1) { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+.warehouse-tile img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 700px) {
+  .warehouse-collage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .warehouse-tile, .warehouse-tile:nth-child(5n + 1), .warehouse-tile:nth-child(5n + 2) { grid-column: span 1; }
+  .warehouse-tile:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+}
 .site-header { flex-wrap: wrap; gap: .75rem 1.5rem; }
 .site-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
 .site-nav a { margin: 0; }
