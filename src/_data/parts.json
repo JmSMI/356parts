@@ -1,5 +1,25 @@
 [
-    {
+  {
+    "id": "generator-6",
+    "name": "Generator",
+    "category": [
+      "engine",
+      "electrical"
+    ],
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "",
+    "notes": "",
+    "images": [
+      "IMG_4016.JPG",
+      "IMG_4018.JPG",
+      "IMG_4019.JPG",
+      "IMG_4017.JPG"
+    ]
+  },
+  {
     "id": "throttle-lever-silver",
     "name": "Throttle lever",
     "category": "engine",
