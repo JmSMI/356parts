@@ -1,18 +1,37 @@
 [
   {
-    "id": "drum-1-1",
+    "id": "drum-1",
     "name": "Drum brakes",
-    "category": "braking",
+    "category": "brakes",
     "price": "Make offer",
+    "quantity": 4,
     "condition": "Excellent",
     "status": "available",
-    "description": "Standard 356 finned drum brakes.",
+    "description": "Standard 356 finned drum brakes. At least 4 available. ",
     "notes": "Vancouver pickup preferred.",
     "images": [
       "drum-1-1-rear-side.JPG",
       "drum-1-1-rear-inner.JPG",
       "drum-1-1-rear-markings.JPG",
       "drum-1-1-rear-outer.JPG"
+    ]
+  },
+  {
+    "id": "drum-backing-cooled-2",
+    "name": "Drum brakes",
+    "category": "brakes",
+    "price": "Make offer",
+    "quantity": 2,
+    "condition": "Excellent",
+    "status": "available",
+    "description": "Backing plates with air scoops. 2 available (left/right). Sold as set.",
+    "notes": "Vancouver pickup preferred.",
+    "images": [
+      "2-2-IMG_3977.JPG",
+      "2-1-IMG_3976.JPG",
+      "2-2-cooled-IMG_3975.JPG",
+      "2-1-cooled-IMG_3974.JPG",
+      "2-1-2-2-set-IMG_3973.JPG"
     ]
   }
 ]
