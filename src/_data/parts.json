@@ -1,5 +1,21 @@
 [
   {
+    "id": "throttle-lever-black",
+    "name": "Throttle lever",
+    "category": "engine",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "Contact for details.",
+    "notes": "",
+    "images": [
+      "throttle4012.JPG",
+      "throttle4010.JPG",
+      "throttle4011.JPG"
+    ]
+  },
+  {
     "id": "drum-1",
     "name": "Drum brakes",
     "category": "brakes",
@@ -107,20 +123,20 @@
     ]
   },
   {
-  "id": "drum-3",
-  "name": "356 exhaust",
-  "category": "exhaust",
-  "price": "tbd",
-  "quantity": 2,
-  "condition": "",
-  "status": "available",
-  "description": "Two available, sold as a pair.",
-  "notes": "Vancouver pickup preferred.",
-  "images": [
-    "3-1-markingsIMG_3960.JPG",
-    "3-1-carrera-drum-1.JPG",
-    "3-1-carrera-drum-2.JPG",
-    "3-1-carrera-drum-3.JPG"
-  ]
-}
+    "id": "drum-3",
+    "name": "356 exhaust",
+    "category": "exhaust",
+    "price": "tbd",
+    "quantity": 2,
+    "condition": "",
+    "status": "available",
+    "description": "Two available, sold as a pair.",
+    "notes": "Vancouver pickup preferred.",
+    "images": [
+      "3-1-markingsIMG_3960.JPG",
+      "3-1-carrera-drum-1.JPG",
+      "3-1-carrera-drum-2.JPG",
+      "3-1-carrera-drum-3.JPG"
+    ]
+  }
 ]
