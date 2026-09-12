@@ -60,7 +60,7 @@
   },
   {
     "id": "shroud-fan-7-2",
-    "name": "Shroud parts",
+    "name": "Shroud fan",
     "category": "engine",
     "price": "tbd",
     "quantity": 1,
@@ -69,9 +69,9 @@
     "description": "",
     "notes": "",
     "images": [
+      "IMG_4028.JPG",
       "IMG_4024.JPG",
-      "IMG_4021.JPG",
-      "IMG_4028.JPG"
+      "IMG_4021.JPG"
     ]
   },
   {
@@ -233,7 +233,7 @@
     "id": "exhaust-1",
     "name": "356 exhaust",
     "category": "exhaust",
-    "price": "tbd",
+    "price": "$tbd",
     "quantity": 1,
     "condition": "",
     "status": "available",
@@ -251,7 +251,7 @@
     "id": "exhaust-2",
     "name": "356 exhaust",
     "category": "exhaust",
-    "price": "tbd",
+    "price": "$800",
     "quantity": 1,
     "condition": "",
     "status": "available",
