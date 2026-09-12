@@ -1,17 +1,5 @@
 [
   {
-    "id": "drum-2",
-    "name": "Front drums",
-    "category": "brakes",
-    "price": "tbd",
-    "quantity": 1,
-    "condition": "",
-    "status": "available",
-    "description": "Pair of front drums. Sold as a pair.",
-    "notes": "",
-    "images": "IMG_4037.jpg"
-  },
-  {
     "id": "shroud-8-2",
     "name": "Shroud parts",
     "category": "engine",
@@ -29,6 +17,20 @@
   {
     "id": "shroud-8-1",
     "name": "Shroud parts",
+    "category": "engine",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "",
+    "notes": "",
+    "images": [
+      "IMG_4037.JPG"
+    ]
+  },
+    {
+    "id": "drum-2a",
+    "name": "Front drums",
     "category": "engine",
     "price": "tbd",
     "quantity": 1,
@@ -175,7 +177,7 @@
   },
   {
     "id": "drum-backing-cooled-2",
-    "name": "Left/right scooped plates",
+    "name": "Rear scooped drum plates",
     "category": "brakes",
     "price": "tbd",
     "quantity": 2,
