@@ -3,7 +3,7 @@
     "id": "drum-1",
     "name": "Drum brakes",
     "category": "brakes",
-    "price": "pending",
+    "price": "tbd",
     "quantity": 4,
     "condition": "",
     "status": "available",
@@ -20,7 +20,7 @@
     "id": "drum-backing-cooled-2",
     "name": "Carrera backing plates for drum brakes",
     "category": "brakes",
-    "price": "pending",
+    "price": "tbd",
     "quantity": 2,
     "condition": "",
     "status": "available",
@@ -38,7 +38,7 @@
     "id": "drum-backing-cooled-2-full",
     "name": "Carrera backing plates for drum brakes, restored",
     "category": "brakes",
-    "price": "pending",
+    "price": "tbd",
     "quantity": 2,
     "condition": "",
     "status": "available",
@@ -59,7 +59,7 @@
     "id": "drum-finned",
     "name": "Carrera backing plates for drum brakes",
     "category": "brakes",
-    "price": "pending",
+    "price": "tbd",
     "quantity": 2,
     "condition": "",
     "status": "available",
@@ -69,6 +69,24 @@
       "4-2-drum-IMG_3963.JPG",
       "4-2-side-IMG_3962.JPG",
       "4-2-topIMG_3961.JPG"
+    ]
+  },
+  {
+    "id": "exhaust-1",
+    "name": "356 exhaust",
+    "category": "exhaust",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "",
+    "notes": "Vancouver pickup preferred.",
+    "images": [
+      "exhaust-13992.JPG",
+      "exhaust-13996.JPG",
+      "exhaust-13995.JPG",
+      "exhaust-13997.JPG",
+      "exhaust-13994.JPG"
     ]
   }
 ]
