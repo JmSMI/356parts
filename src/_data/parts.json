@@ -1,5 +1,19 @@
 [
   {
+    "id": "drum-2",
+    "name": "Front drums",
+    "category": "engine",
+    "price": "tbd",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "Pair of front drums. Sold as a pair.",
+    "notes": "",
+    "images": [
+      "IMG_4037.JPG"
+    ]
+  },
+  {
     "id": "shroud-8-2",
     "name": "Shroud parts",
     "category": "engine",
@@ -253,7 +267,7 @@
   },
   {
     "id": "drum-3",
-    "name": "carrera drum brakes",
+    "name": "carrera front drum brakes",
     "category": "brakes",
     "price": "tbd",
     "quantity": 2,
@@ -262,6 +276,7 @@
     "description": "Two available, sold as a pair.",
     "notes": "",
     "images": [
+      "IMG_4036.jpg",
       "3-1-carrera-drum-1.JPG",
       "3-1-markingsIMG_3960.JPG",
       "3-1-carrera-drum-2.JPG",
