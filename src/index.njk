@@ -37,7 +37,7 @@ title: Porsche 356 Parts — Vancouver, BC
         <a href="{{ ('/parts/' + part.id + '/') | url }}"
            class="part-card{% if part.status == 'sold' %} sold{% endif %}"
            data-category="{{ part.category }}"
-           data-search="{{ part.name }} {{ part.category }} {{ part.description }} {{ part.condition }} {{ part.notes }}">
+           data-search="{{ part.name }} {{ part.category }} {{ part.description }} {{ part.status }} {{ part.notes }}">
 
           {% if part.status == 'sold' %}
             <span class="sold-badge">Sold</span>
@@ -62,7 +62,7 @@ title: Porsche 356 Parts — Vancouver, BC
             </div>
             <div class="part-footer">
               <span class="part-price">{{ part.price }}</span>
-              <span class="part-condition">{{ part.condition }}</span>
+              {% if part.status %}<span class="sale-status">Sale: {{ part.status }}</span>{% endif %}
             </div>
           </div>
 

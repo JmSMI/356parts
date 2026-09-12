@@ -61,10 +61,7 @@ eleventyComputed:
           <h1>{{ part.name }}</h1>
           <div class="detail-meta">
             <span class="detail-price">{{ part.price }}</span>
-            <span class="detail-condition">{{ part.condition }}</span>
-            {% if part.status == 'sold' %}
-              <span class="sold-badge" style="position:static;">Sold</span>
-            {% endif %}
+            {% if part.status %}<span class="sale-status">Sale: {{ part.status }}</span>{% endif %}
           </div>
         </div>
 
@@ -74,7 +71,7 @@ eleventyComputed:
           <div class="detail-notes">{{ part.notes }}</div>
         {% endif %}
 
-        {% if part.status != 'sold' %}
+        {% if part.status != 'sold' and part.status != 'not for sale' %}
           <div class="detail-contact">
             <a href="mailto:jpmoffat@gmail.com?subject={{ ('Inquiry: ' + part.name) | encodeUri }}" class="contact-link">
               Inquire about this part

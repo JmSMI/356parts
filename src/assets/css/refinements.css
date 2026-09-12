@@ -57,5 +57,8 @@ button, input, select, textarea { font: inherit; }
 .draft-notice { background: #eae7dc; color: #5e5a4b; border-bottom: 1px solid #d5d1c2; font-size: .8125rem; }
 .site-footer { background: var(--warm-off); }
 .footer-note { opacity: 1; }
+.parts-grid { background: transparent; border: 0; gap: 1px; }
+.part-card { outline: 1px solid var(--border); }
+.sale-status { font-size: .8125rem; color: var(--mist); }
 @media (max-width: 420px) { .site-header { flex-wrap: wrap; gap: .5rem; } .site-nav { display: flex; gap: 1rem; } .site-nav a { margin-left: 0; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

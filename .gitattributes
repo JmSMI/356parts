@@ -1,0 +1,17 @@
+# Keep source files consistent across Windows and GitHub.
+* text=auto eol=lf
+
+# Windows command launchers use native line endings.
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Photos and other binary assets must never be converted.
+*.jpg binary
+*.JPG binary
+*.jpeg binary
+*.JPEG binary
+*.png binary
+*.PNG binary
+*.webp binary
+*.gif binary
+*.ico binary
