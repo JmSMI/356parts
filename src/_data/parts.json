@@ -34,6 +34,20 @@
       "IMG_4043.JPG"
     ]
   },
+    {
+    "id": "shroud-bracket",
+    "name": "Shroud mounting bracket",
+    "category": "engine",
+    "price": "$10 each",
+    "quantity": 3,
+    "condition": "",
+    "status": "available",
+    "description": "3 available",
+    "notes": "",
+    "images": [
+      "IMG_4047.JPG"
+    ]
+  },
   {
     "id": "drum-2a",
     "name": "Front drums",
