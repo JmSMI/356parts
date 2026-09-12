@@ -33,7 +33,7 @@
     {
     "id": "drum-2a",
     "name": "Front drums",
-    "category": "engine",
+    "category": "brakes",
     "price": "tbd",
     "quantity": 1,
     "condition": "",
@@ -41,7 +41,7 @@
     "description": "",
     "notes": "",
     "images": [
-      "IMG_4037.JPG"
+      "IMG_4037a.JPG"
     ]
   },
   {
