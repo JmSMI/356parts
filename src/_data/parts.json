@@ -192,27 +192,6 @@
     ]
   },
   {
-    "id": "drum-backing-cooled-2-full",
-    "name": "Left/right scooped plates with parts",
-    "category": "brakes",
-    "price": "tbd",
-    "quantity": 2,
-    "condition": "",
-    "status": "available",
-    "description": "Sold as pair. Left and right side. Restored.",
-    "notes": "",
-    "images": [
-      "3-1-back-IMG_3972.JPG",
-      "3-1-back-IMG_3971.JPG",
-      "3-1-back-IMG_3970.JPG",
-      "3-2-back-IMG_3969.JPG",
-      "3-2-back-IMG_3968.JPG",
-      "3-2-back-IMG_3967.JPG",
-      "3-2-back-IMG_3966.JPG",
-      "3-2-3-1-set-back-IMG_3965.JPG"
-    ]
-  },
-  {
     "id": "drum-finned",
     "name": "finned drum brakes",
     "category": "brakes",
@@ -251,7 +230,7 @@
     "id": "exhaust-2",
     "name": "356 exhaust",
     "category": "exhaust",
-    "price": "$800",
+    "price": "$500",
     "quantity": 1,
     "condition": "",
     "status": "available",
@@ -272,14 +251,22 @@
     "quantity": 2,
     "condition": "",
     "status": "available",
-    "description": "Two available, sold as a pair.",
+    "description": "Two available, sold as a pair along with 60mm shoes and pictured hardware. Contact for details. Note that 40mm are shown in photo.",
     "notes": "",
     "images": [
       "IMG_4036.jpg",
       "3-1-carrera-drum-1.JPG",
       "3-1-markingsIMG_3960.JPG",
       "3-1-carrera-drum-2.JPG",
-      "3-1-carrera-drum-3.JPG"
+      "3-1-carrera-drum-3.JPG",
+      "3-1-back-IMG_3972.JPG",
+      "3-1-back-IMG_3971.JPG",
+      "3-1-back-IMG_3970.JPG",
+      "3-2-back-IMG_3969.JPG",
+      "3-2-back-IMG_3968.JPG",
+      "3-2-back-IMG_3967.JPG",
+      "3-2-back-IMG_3966.JPG",
+      "3-2-3-1-set-back-IMG_3965.JPG"
     ]
   }
 ]
