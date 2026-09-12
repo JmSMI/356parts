@@ -60,5 +60,26 @@ button, input, select, textarea { font: inherit; }
 .parts-grid { background: transparent; border: 0; gap: 1px; }
 .part-card { outline: 1px solid var(--border); }
 .sale-status { font-size: .8125rem; color: var(--mist); }
+.site-header { flex-wrap: wrap; gap: .75rem 1.5rem; }
+.site-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.site-nav a { margin: 0; }
+.catalog-heading { font-size: 1.25rem; padding-top: 1.5rem; }
+.catalog-section { border-top: 1px solid var(--border); padding: 2rem 0; scroll-margin-top: 1rem; }
+.catalog-section h2 { font-size: 1.25rem; margin-bottom: 1rem; }
+.section-empty { color: var(--mist); font-size: .9375rem; }
+.wanted-item { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border-lt); }
+.wanted-item h3 { font-size: 1rem; }
+.wanted-item p { max-width: 65ch; font-size: .9375rem; color: var(--mist); margin-top: .3rem; }
+.wanted-item .contact-link { flex-shrink: 0; }
+.warehouse-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.warehouse-photo { display: block; width: 100%; background: transparent; border: 1px solid var(--border); cursor: zoom-in; }
+.warehouse-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.warehouse-grid figcaption { margin-top: .4rem; font-size: .875rem; color: var(--mist); }
+#warehouse-viewer { margin: auto; width: min(1100px, 94vw); max-height: 94vh; padding: 1rem; background: var(--cream); color: var(--ink); border: 1px solid var(--border); }
+#warehouse-viewer::backdrop { background: rgb(0 0 0 / 75%); }
+#warehouse-viewer form { text-align: right; margin-bottom: .75rem; }
+#warehouse-full { width: 100%; max-height: 72vh; object-fit: contain; }
+#warehouse-caption { margin-top: .5rem; }
+@media (max-width: 600px) { .warehouse-grid { grid-template-columns: 1fr; } .wanted-item { align-items: flex-start; flex-direction: column; } }
 @media (max-width: 420px) { .site-header { flex-wrap: wrap; gap: .5rem; } .site-nav { display: flex; gap: 1rem; } .site-nav a { margin-left: 0; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

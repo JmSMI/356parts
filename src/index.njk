@@ -16,6 +16,7 @@ title: Porsche 356 Parts — Vancouver, BC
     </div>
   </div>
 
+  <h2 class="catalog-heading" id="parts">Parts for sale</h2>
   <div class="filter-bar">
     <label class="search-label" for="part-search">Find a part
       <input id="part-search" type="search" placeholder="Search names, descriptions, categories…">
@@ -72,6 +73,49 @@ title: Porsche 356 Parts — Vancouver, BC
   </div>
 
   <p id="filter-result" role="status" aria-live="polite"></p>
+  <section class="catalog-section" id="wanted" aria-labelledby="wanted-heading">
+    <h2 id="wanted-heading">Parts wanted</h2>
+    {% if wanted.length %}
+    <div class="wanted-list">
+      {% for item in wanted %}
+      <article class="wanted-item">
+        <div>
+          <h3>{{ item.name }}</h3>
+          {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+          {% if item.budget %}<p class="wanted-budget">Budget: {{ item.budget }}</p>{% endif %}
+        </div>
+        <a class="contact-link" href="mailto:jpmoffat@gmail.com?subject={{ ('Wanted: ' + item.name) | encodeUri }}">Get in touch</a>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="section-empty">No wanted parts listed at the moment.</p>
+    {% endif %}
+  </section>
+
+  <section class="catalog-section" id="warehouse" aria-labelledby="warehouse-heading">
+    <h2 id="warehouse-heading">Warehouse</h2>
+    {% if warehouse.length %}
+    <div class="warehouse-grid">
+      {% for photo in warehouse %}
+      <figure>
+        <button class="warehouse-photo" type="button" data-full="{{ ('/assets/warehouse/' + photo.image) | url }}" data-caption="{{ photo.caption or 'Warehouse photo' }}" aria-label="Enlarge {{ photo.caption or 'warehouse photo' }}">
+          <img src="{{ ('/assets/warehouse/' + photo.image) | url }}" alt="{{ photo.alt or photo.caption or 'Parts in the warehouse' }}" loading="lazy">
+        </button>
+        {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    <dialog id="warehouse-viewer" aria-label="Warehouse photo viewer">
+      <form method="dialog"><button class="contact-link">Close photo</button></form>
+      <img id="warehouse-full" alt="">
+      <p id="warehouse-caption"></p>
+    </dialog>
+    {% else %}
+    <p class="section-empty">Warehouse photos coming soon.</p>
+    {% endif %}
+  </section>
+
   <div class="contact-section" id="contact">
     <h2>Get in touch</h2>
     <p>Serious inquiries only. Please mention which part you're after and your general location. I'll respond within a day or two.</p>
@@ -106,4 +150,14 @@ title: Porsche 356 Parts — Vancouver, BC
     });
   });
   applyFilters();
+  const viewer = document.getElementById('warehouse-viewer');
+  document.querySelectorAll('.warehouse-photo').forEach(button => {
+    button.addEventListener('click', () => {
+      const full = document.getElementById('warehouse-full');
+      full.src = button.dataset.full;
+      full.alt = button.querySelector('img').alt;
+      document.getElementById('warehouse-caption').textContent = button.dataset.caption;
+      viewer.showModal();
+    });
+  });
 </script>

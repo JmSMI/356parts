@@ -1,5 +1,39 @@
 # Parts and photos
 
+## Parts wanted
+
+Edit `src/_data/wanted.json`. Replace the empty `[]` with entries like this:
+
+```json
+[
+  {
+    "name": "Name of the part you need",
+    "description": "Model, year, or other details.",
+    "budget": "Open to offers"
+  }
+]
+```
+
+`budget` and `description` are optional. Separate multiple entries with commas. These appear on the main page under Parts wanted.
+
+## Warehouse photos
+
+Put photos in `src/assets/warehouse/`. Then edit `src/_data/warehouse.json`:
+
+```json
+[
+  {
+    "image": "shed-overview.jpg",
+    "caption": "Shed overview",
+    "alt": "Shelves and boxes of parts inside the shed"
+  }
+]
+```
+
+Use the exact filename including capitalization. Captions are optional; `alt` describes the photo for accessibility. Photos appear in JSON order and open larger on the same page when clicked. Both sections start empty, with no invented wanted items or photos.
+
+## Parts for sale
+
 Edit all listings in `src/_data/parts.json`.
 
 - `price`: the asking price, e.g. `$500 CAD`, or `Price on request`.
