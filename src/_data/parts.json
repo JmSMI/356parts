@@ -38,11 +38,11 @@
     "id": "drum-front",
     "name": "Front drum brakes",
     "category": "brakes",
-    "price": "tbd",
+    "price": "$500",
     "quantity": 1,
     "condition": "",
     "status": "available",
-    "description": "",
+    "description": "Two. Sold as a pair",
     "notes": "",
     "images": [
       "Screenshot 2026-09-12 165348.png"
@@ -99,14 +99,14 @@
     ]
   },
   {
-    "id": "drum-1",
+    "id": "rear-drum",
     "name": "Rear drum brakes",
     "category": "brakes",
-    "price": "tbd",
+    "price": "250 each",
     "quantity": 4,
     "condition": "",
     "status": "available",
-    "description": "Sold in pairs.",
+    "description": "4 available. Sold in pairs.",
     "notes": "",
     "images": [
       "IMG_4039.webp",
@@ -117,24 +117,6 @@
     ]
   },
   {
-    "id": "drum-backing-cooled-2",
-    "name": "Scooped drum plates",
-    "category": "brakes",
-    "price": "tbd",
-    "quantity": 2,
-    "condition": "",
-    "status": "available",
-    "description": "Sold as pair. Left and right side.",
-    "notes": "",
-    "images": [
-      "2-2-IMG_3977.webp",
-      "2-1-IMG_3976.webp",
-      "2-2-cooled-IMG_3975.webp",
-      "2-1-cooled-IMG_3974.webp",
-      "2-1-2-2-set-IMG_3973.webp"
-    ]
-  },
-  {
     "id": "drum-back-1",
     "name": "Rear drum plates",
     "category": "brakes",
@@ -142,28 +124,11 @@
     "quantity": 2,
     "condition": "",
     "status": "available",
-    "description": "Sold as a pair.",
+    "description": "Sold as a pair. No hardware.",
     "notes": "",
     "images": [
       "IMG_4048.webp",
       "IMG_4049.webp"
-    ]
-  },
-  {
-    "id": "drum-finned",
-    "name": "Rear drum brakes (pre-a?)",
-    "category": "brakes",
-    "price": "tbd",
-    "quantity": 2,
-    "condition": "",
-    "status": "available",
-    "description": "Rear. Sold as pair.",
-    "notes": "",
-    "images": [
-      "IMG_4035.webp",
-      "4-2-side-IMG_3962.webp",
-      "4-2-drum-IMG_3963.webp",
-      "4-2-topIMG_3961.webp"
     ]
   },
   {
@@ -202,29 +167,38 @@
     ]
   },
   {
-    "id": "drum-3",
-    "name": "carrera front drum brakes",
+    "id": "gt-brakes",
+    "name": "GT brakes - front and rear",
     "category": "brakes",
     "price": "tbd",
     "quantity": 2,
     "condition": "",
     "status": "available",
-    "description": "Two available, sold as a pair along with 60mm shoes and pictured hardware. Contact for details. Note that 40mm are shown in photo.",
+    "description": "Front 60mm drums and 60mm shoes with aluminum CNC lifts. Cylinders/springs included for the front drums but will need some parts (piston [NLA-351-521-00] and bushings). Rear 40mm with re-built complete plates. Extra springs and misc. hardware.",
     "notes": "",
     "images": [
-      "IMG_4036.webp",
+      "IMG_4054.jpg",
+      "2-1-2-2-set-IMG_3973.webp",
+      "2-1-cooled-IMG_3974.webp",
+      "2-1-IMG_3976.webp",
+      "2-2-cooled-IMG_3975.webp",
+      "2-2-IMG_3977.webp",
+      "3-1-back-IMG_3970.webp",
+      "3-1-back-IMG_3971.webp",
+      "3-1-back-IMG_3972.webp",
       "3-1-carrera-drum-1.webp",
-      "3-1-markingsIMG_3960.webp",
       "3-1-carrera-drum-2.webp",
       "3-1-carrera-drum-3.webp",
-      "3-1-back-IMG_3972.webp",
-      "3-1-back-IMG_3971.webp",
-      "3-1-back-IMG_3970.webp",
-      "3-2-back-IMG_3969.webp",
-      "3-2-back-IMG_3968.webp",
-      "3-2-back-IMG_3967.webp",
+      "3-1-markingsIMG_3960.webp",
+      "3-2-3-1-set-back-IMG_3965.webp",
       "3-2-back-IMG_3966.webp",
-      "3-2-3-1-set-back-IMG_3965.webp"
+      "3-2-back-IMG_3967.webp",
+      "3-2-back-IMG_3968.webp",
+      "3-2-back-IMG_3969.webp",
+      "IMG_4036.webp",
+      "IMG_4055.JPG",
+      "IMG_4057.JPG",
+      "IMG_4056.JPG"
     ]
   }
 ]
