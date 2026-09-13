@@ -1,7 +1,7 @@
 [
   {
     "id": "shroud-8-2",
-    "name": "Shroud parts",
+    "name": "Shroud",
     "category": "engine",
     "price": "tbd",
     "quantity": 1,
@@ -10,10 +10,10 @@
     "description": "May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. Some dents in the shroud body around the fan opening. As pictured.",
     "notes": "",
     "images": [
-      "IMG_4046.JPG",
-      "IMG_4034.JPG",
-      "IMG_4033.JPG",
-      "IMG_4044.JPG"
+      "IMG_4046.webp",
+      "IMG_4034.webp",
+      "IMG_4033.webp",
+      "IMG_4044.webp"
     ]
   },
   {
@@ -27,16 +27,16 @@
     "description": "May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. As pictured.",
     "notes": "",
     "images": [
-      "IMG_4045.JPG",
-      "IMG_4030.JPG",
-      "IMG_4031.JPG",
-      "IMG_4042.JPG",
-      "IMG_4043.JPG"
+      "IMG_4045.webp",
+      "IMG_4030.webp",
+      "IMG_4031.webp",
+      "IMG_4042.webp",
+      "IMG_4043.webp"
     ]
   },
   {
     "id": "drum-front",
-    "name": "Front drums",
+    "name": "Front drum brakes",
     "category": "brakes",
     "price": "tbd",
     "quantity": 1,
@@ -59,9 +59,9 @@
     "description": "",
     "notes": "",
     "images": [
-      "IMG_4020.JPG",
-      "IMG_4023.JPG",
-      "IMG_4027.JPG"
+      "IMG_4020.webp",
+      "IMG_4023.webp",
+      "IMG_4027.webp"
     ]
   },
   {
@@ -78,24 +78,24 @@
     "description": "6v generator. LJ / REF 1607 / 6 / 2500 L21 / 180",
     "notes": "",
     "images": [
-      "IMG_4016.JPG",
-      "IMG_4018.JPG",
-      "IMG_4019.JPG",
-      "IMG_4017.JPG"
+      "IMG_4016.webp",
+      "IMG_4018.webp",
+      "IMG_4019.webp",
+      "IMG_4017.webp"
     ]
   },
   {
     "id": "engine-mount",
     "name": "Engine mount",
     "category": "engine",
-    "price": "tbd",
+    "price": "200",
     "quantity": 1,
     "condition": "",
     "status": "available",
     "description": "Excellent condition.",
     "notes": "",
     "images": [
-      "IMG_4015.JPG"
+      "IMG_4015.webp"
     ]
   },
   {
@@ -109,11 +109,11 @@
     "description": "Sold in pairs.",
     "notes": "",
     "images": [
-      "IMG_4039.jpg",
-      "drum-1-1-rear-side.JPG",
-      "drum-1-1-rear-inner.JPG",
-      "drum-1-1-rear-markings.JPG",
-      "drum-1-1-rear-outer.JPG"
+      "IMG_4039.webp",
+      "drum-1-1-rear-side.webp",
+      "drum-1-1-rear-inner.webp",
+      "drum-1-1-rear-markings.webp",
+      "drum-1-1-rear-outer.webp"
     ]
   },
   {
@@ -127,11 +127,26 @@
     "description": "Sold as pair. Left and right side.",
     "notes": "",
     "images": [
-      "2-2-IMG_3977.JPG",
-      "2-1-IMG_3976.JPG",
-      "2-2-cooled-IMG_3975.JPG",
-      "2-1-cooled-IMG_3974.JPG",
-      "2-1-2-2-set-IMG_3973.JPG"
+      "2-2-IMG_3977.webp",
+      "2-1-IMG_3976.webp",
+      "2-2-cooled-IMG_3975.webp",
+      "2-1-cooled-IMG_3974.webp",
+      "2-1-2-2-set-IMG_3973.webp"
+    ]
+  },
+  {
+    "id": "drum-back-1",
+    "name": "Front drum plates",
+    "category": "brakes",
+    "price": "tbd",
+    "quantity": 2,
+    "condition": "",
+    "status": "available",
+    "description": "Sold as a pair.",
+    "notes": "",
+    "images": [
+      "IMG_4048.webp",
+      "IMG_4049.webp"
     ]
   },
   {
@@ -145,10 +160,10 @@
     "description": "Rear. Sold as pair.",
     "notes": "",
     "images": [
-      "IMG_4035.JPG",
-      "4-2-side-IMG_3962.JPG",
-      "4-2-drum-IMG_3963.JPG",
-      "4-2-topIMG_3961.JPG"
+      "IMG_4035.webp",
+      "4-2-side-IMG_3962.webp",
+      "4-2-drum-IMG_3963.webp",
+      "4-2-topIMG_3961.webp"
     ]
   },
   {
@@ -162,11 +177,11 @@
     "description": "More information to come.",
     "notes": "",
     "images": [
-      "exhaust-13992.JPG",
-      "exhaust-13996.JPG",
-      "exhaust-13995.JPG",
-      "exhaust-13997.JPG",
-      "exhaust-13994.JPG"
+      "exhaust-13992.webp",
+      "exhaust-13996.webp",
+      "exhaust-13995.webp",
+      "exhaust-13997.webp",
+      "exhaust-13994.webp"
     ]
   },
   {
@@ -180,10 +195,10 @@
     "description": "More information to come. Message me if you want a faster answer.",
     "notes": "",
     "images": [
-      "exhaust-24006.JPG",
-      "exhaust-24007.JPG",
-      "exhaust-24008.JPG",
-      "exhaust-24009.JPG"
+      "exhaust-24006.webp",
+      "exhaust-24007.webp",
+      "exhaust-24008.webp",
+      "exhaust-24009.webp"
     ]
   },
   {
@@ -197,19 +212,19 @@
     "description": "Two available, sold as a pair along with 60mm shoes and pictured hardware. Contact for details. Note that 40mm are shown in photo.",
     "notes": "",
     "images": [
-      "IMG_4036.jpg",
-      "3-1-carrera-drum-1.JPG",
-      "3-1-markingsIMG_3960.JPG",
-      "3-1-carrera-drum-2.JPG",
-      "3-1-carrera-drum-3.JPG",
-      "3-1-back-IMG_3972.JPG",
-      "3-1-back-IMG_3971.JPG",
-      "3-1-back-IMG_3970.JPG",
-      "3-2-back-IMG_3969.JPG",
-      "3-2-back-IMG_3968.JPG",
-      "3-2-back-IMG_3967.JPG",
-      "3-2-back-IMG_3966.JPG",
-      "3-2-3-1-set-back-IMG_3965.JPG"
+      "IMG_4036.webp",
+      "3-1-carrera-drum-1.webp",
+      "3-1-markingsIMG_3960.webp",
+      "3-1-carrera-drum-2.webp",
+      "3-1-carrera-drum-3.webp",
+      "3-1-back-IMG_3972.webp",
+      "3-1-back-IMG_3971.webp",
+      "3-1-back-IMG_3970.webp",
+      "3-2-back-IMG_3969.webp",
+      "3-2-back-IMG_3968.webp",
+      "3-2-back-IMG_3967.webp",
+      "3-2-back-IMG_3966.webp",
+      "3-2-3-1-set-back-IMG_3965.webp"
     ]
   }
 ]
