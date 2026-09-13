@@ -88,7 +88,7 @@
     "id": "engine-mount",
     "name": "Engine mount",
     "category": "engine",
-    "price": "200",
+    "price": "$200",
     "quantity": 1,
     "condition": "",
     "status": "available",
@@ -118,7 +118,7 @@
   },
   {
     "id": "drum-backing-cooled-2",
-    "name": "Rear scooped drum plates",
+    "name": "Scooped drum plates",
     "category": "brakes",
     "price": "tbd",
     "quantity": 2,
@@ -136,7 +136,7 @@
   },
   {
     "id": "drum-back-1",
-    "name": "Front drum plates",
+    "name": "Rear drum plates",
     "category": "brakes",
     "price": "tbd",
     "quantity": 2,
