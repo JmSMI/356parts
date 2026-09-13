@@ -1,4 +1,21 @@
 [
+    {
+    "id": "engine-case",
+    "name": "1600 Super engine case",
+    "category": "engine",
+    "price": "$3500",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "1962 Porsche 356B 1600 Super engine case, type 616/12 - P702319. All three pieces matched (99).",
+    "notes": "",
+    "images": [
+      "IMG_4062.jpg",
+      "IMG_4061.jpg",
+      "IMG_4059.jpg",
+      "IMG_4063.jpg"
+    ]
+  },
   {
     "id": "shroud-8-2",
     "name": "Shroud",
