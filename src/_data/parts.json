@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": "engine-case",
     "name": "1600 Super engine case",
     "category": "engine",
@@ -20,30 +20,17 @@
     "id": "shroud-8-2",
     "name": "Shroud",
     "category": "engine",
-    "price": "tbd",
+    "price": "$400",
     "quantity": 1,
     "condition": "",
     "status": "available",
-    "description": "May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. Some dents in the shroud body around the fan opening. As pictured.",
+    "description": "Two available. $400 each, or both for $700 for both. May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. Good condition. As pictured.",
     "notes": "",
     "images": [
       "IMG_4046.webp",
       "IMG_4034.webp",
       "IMG_4033.webp",
-      "IMG_4044.webp"
-    ]
-  },
-  {
-    "id": "shroud-8-1",
-    "name": "Shroud",
-    "category": "engine",
-    "price": "tbd",
-    "quantity": 1,
-    "condition": "",
-    "status": "available",
-    "description": "May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. As pictured.",
-    "notes": "",
-    "images": [
+      "IMG_4044.webp",
       "IMG_4045.webp",
       "IMG_4030.webp",
       "IMG_4031.webp",
@@ -134,7 +121,7 @@
     ]
   },
   {
-    "id": "drum-back-1",
+    "id": "rear-drum-plate",
     "name": "Rear drum plates",
     "category": "brakes",
     "price": "tbd",
