@@ -1,5 +1,40 @@
 [
   {
+    "id": "gt-brakes",
+    "name": "GT brakes - front and rear",
+    "category": "brakes",
+    "price": "tbd",
+    "quantity": 2,
+    "condition": "",
+    "status": "available",
+    "description": "Front 60mm drums and 60mm shoes with aluminum CNC lifts. Cylinders/springs included for the front drums but will need some parts (piston [NLA-351-521-00] and bushings). Rear 40mm with re-built complete plates. Extra springs and misc. hardware.",
+    "notes": "",
+    "images": [
+      "IMG_4054.jpg",
+      "2-1-2-2-set-IMG_3973.webp",
+      "2-1-cooled-IMG_3974.webp",
+      "2-1-IMG_3976.webp",
+      "2-2-cooled-IMG_3975.webp",
+      "2-2-IMG_3977.webp",
+      "3-1-back-IMG_3970.webp",
+      "3-1-back-IMG_3971.webp",
+      "3-1-back-IMG_3972.webp",
+      "3-1-carrera-drum-1.webp",
+      "3-1-carrera-drum-2.webp",
+      "3-1-carrera-drum-3.webp",
+      "3-1-markingsIMG_3960.webp",
+      "3-2-3-1-set-back-IMG_3965.webp",
+      "3-2-back-IMG_3966.webp",
+      "3-2-back-IMG_3967.webp",
+      "3-2-back-IMG_3968.webp",
+      "3-2-back-IMG_3969.webp",
+      "IMG_4036.webp",
+      "IMG_4055.JPG",
+      "IMG_4057.JPG",
+      "IMG_4056.JPG"
+    ]
+  },
+  {
     "id": "engine-case",
     "name": "1600 Super engine case",
     "category": "engine",
@@ -18,13 +53,13 @@
   },
   {
     "id": "shroud-8-2",
-    "name": "Shroud",
+    "name": "Shroud with fan wheel and linkage assembly",
     "category": "engine",
-    "price": "$400",
+    "price": "$350",
     "quantity": 1,
     "condition": "",
     "status": "available",
-    "description": "Two available. $400 each, or both for $700 for both. May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. Good condition. As pictured.",
+    "description": "Two available. $350 each, or both for $600 for both. May be missing a ball joint or two. Fan shroud, fan cover, linkages, shroud body. Good condition. As pictured.",
     "notes": "",
     "images": [
       "IMG_4046.webp",
@@ -49,14 +84,14 @@
     "description": "Two. Sold as a pair",
     "notes": "",
     "images": [
-      "Screenshot 2026-09-12 165348.png"
+      "Screenshot 2026-09-12 165348.webp"
     ]
   },
   {
     "id": "shroud-fan-7-1",
-    "name": "Shroud parts",
+    "name": "Fan wheel",
     "category": "engine",
-    "price": "tbd",
+    "price": "$100",
     "quantity": 1,
     "condition": "",
     "status": "available",
@@ -168,41 +203,6 @@
       "exhaust-24007.webp",
       "exhaust-24008.webp",
       "exhaust-24009.webp"
-    ]
-  },
-  {
-    "id": "gt-brakes",
-    "name": "GT brakes - front and rear",
-    "category": "brakes",
-    "price": "tbd",
-    "quantity": 2,
-    "condition": "",
-    "status": "available",
-    "description": "Front 60mm drums and 60mm shoes with aluminum CNC lifts. Cylinders/springs included for the front drums but will need some parts (piston [NLA-351-521-00] and bushings). Rear 40mm with re-built complete plates. Extra springs and misc. hardware.",
-    "notes": "",
-    "images": [
-      "IMG_4054.jpg",
-      "2-1-2-2-set-IMG_3973.webp",
-      "2-1-cooled-IMG_3974.webp",
-      "2-1-IMG_3976.webp",
-      "2-2-cooled-IMG_3975.webp",
-      "2-2-IMG_3977.webp",
-      "3-1-back-IMG_3970.webp",
-      "3-1-back-IMG_3971.webp",
-      "3-1-back-IMG_3972.webp",
-      "3-1-carrera-drum-1.webp",
-      "3-1-carrera-drum-2.webp",
-      "3-1-carrera-drum-3.webp",
-      "3-1-markingsIMG_3960.webp",
-      "3-2-3-1-set-back-IMG_3965.webp",
-      "3-2-back-IMG_3966.webp",
-      "3-2-back-IMG_3967.webp",
-      "3-2-back-IMG_3968.webp",
-      "3-2-back-IMG_3969.webp",
-      "IMG_4036.webp",
-      "IMG_4055.JPG",
-      "IMG_4057.JPG",
-      "IMG_4056.JPG"
     ]
   }
 ]
