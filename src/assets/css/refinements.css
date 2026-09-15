@@ -60,6 +60,11 @@ button, input, select, textarea { font: inherit; }
 .parts-grid { background: transparent; border: 0; gap: 1px; }
 .part-card { outline: 1px solid var(--border); }
 .sale-status { font-size: .8125rem; color: var(--mist); }
+.part-references { border-top: 1px solid var(--border-lt); padding-top: 1rem; font-size: .875rem; }
+.part-references h2 { font-size: 1rem; margin-bottom: .5rem; }
+.part-references ul { padding-left: 1.25rem; }
+.part-references li { margin: .5rem 0; overflow-wrap: anywhere; }
+.part-references p { color: var(--mist); margin-top: .2rem; }
 .pricing-note { margin: 1.25rem auto 0; max-width: 72ch; }
 .pricing-note h2 { font-size: .9375rem; font-weight: 600; margin-bottom: .35rem; }
 .page-intro .pricing-note p { font-size: .875rem; line-height: 1.6; margin: .35rem auto 0; }

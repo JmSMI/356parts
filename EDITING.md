@@ -1,5 +1,25 @@
 # Parts and photos
 
+## Reference links on a part
+
+Add an optional `references` array inside any entry in `src/_data/parts.json`:
+
+```json
+"references": [
+  {
+    "label": "Comparable listing — $800 USD asking price",
+    "href": "https://example.com/listing",
+    "note": "Optional context, such as condition differences or the date checked."
+  },
+  {
+    "label": "Part identification research",
+    "href": "https://example.com/research"
+  }
+]
+```
+
+Use full `https://` URLs. Links appear below the description/notes on the part page, in the order entered, and open in a new tab. `note` is optional. Omit `references` or use `"references": []` to hide the section. Keep commas between JSON fields and between reference objects.
+
 Wanted items can include an optional `href` in `src/_data/wanted.json`:
 
 ```json

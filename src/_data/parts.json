@@ -56,7 +56,14 @@
     "status": "available",
     "description": "Pair of restored Solex 40 PII-4 split-shaft carburetors.",
     "notes": "",
-    "images": []
+    "images": [],
+    "references": [
+  {
+    "label": "",
+    "href": "",
+    "note": ""
+  }
+]
   },
   {
     "id": "solex-40-pii-4-air-horns",
@@ -69,7 +76,7 @@
     "description": "Pick a pair to go with the solex carbs. Two sets of air horns for Solex 40 PII-4 carburetors. Shorter original-style air horns with mesh filter.",
     "notes": "",
     "images": []
-  }
+  },  
   {
     "id": "engine-case",
     "name": "1600 Super engine case",

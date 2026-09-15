@@ -73,6 +73,17 @@ eleventyComputed:
           <div class="detail-notes">{{ part.notes }}</div>
         {% endif %}
 
+        {% if part.references and part.references.length %}
+          <section class="part-references" aria-labelledby="references-heading">
+            <h2 id="references-heading">Reference links</h2>
+            <ul>
+              {% for reference in part.references %}
+              <li><a href="{{ reference.href }}" target="_blank" rel="noopener noreferrer">{{ reference.label or reference.href }}</a>{% if reference.note %}<p>{{ reference.note }}</p>{% endif %}</li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+
         {% if part.status != 'sold' and part.status != 'not for sale' %}
           <div class="detail-contact">
             <a href="mailto:jpmoffat@gmail.com?subject={{ ('Inquiry: ' + part.name) | encodeUri }}" class="contact-link">
