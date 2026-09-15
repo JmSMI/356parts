@@ -1,5 +1,19 @@
 # Parts and photos
 
+Wanted items can include an optional `href` in `src/_data/wanted.json`:
+
+```json
+[
+  {
+    "name": "Parking brake guide tube",
+    "href": "https://example.com/part",
+    "description": ""
+  }
+]
+```
+
+The site renders the name as `<a href="...">Parking brake guide tube</a>`. Use a full `https://` URL. Leave `href` empty or omit it for plain text. Enter text and URL as separate JSON fields, not raw HTML.
+
 ## Multiple categories
 
 Use `"categories": ["engine", "electrical"]` in a part entry. Each label appears on the card and detail page, and either filter finds the part. Custom category names are supported.

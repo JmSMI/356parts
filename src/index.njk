@@ -82,7 +82,7 @@ title: Porsche 356 Parts — Vancouver, BC
     {% if wanted.length %}
     <ul class="wanted-bullets">
       {% for item in wanted %}
-      <li>{{ item.name }}{% if item.description %} — {{ item.description }}{% endif %}</li>
+      <li>{% if item.href %}<a href="{{ item.href }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}{% if item.description %} — {{ item.description }}{% endif %}</li>
       {% endfor %}
     </ul>
     {% else %}
