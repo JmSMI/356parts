@@ -35,6 +35,42 @@
     ]
   },
   {
+    "id": "solex-40-pii-4-unrestored",
+    "name": "Solex 40 PII-4 carburetors with intake manifolds - unrestored",
+    "category": "fuel",
+    "price": "pending",
+    "quantity": 1,
+    "condition": "Unrestored",
+    "status": "available",
+    "description": "Pair of unrestored Solex 40 PII-4 split-shaft carburetors with intake manifolds. Good condition.",
+    "notes": "",
+    "images": []
+  },
+  {
+    "id": "solex-40-pii-4-restored",
+    "name": "Solex 40 PII-4 carburetors - restored",
+    "category": "fuel",
+    "price": "pending",
+    "quantity": 1,
+    "condition": "Restored",
+    "status": "available",
+    "description": "Pair of restored Solex 40 PII-4 split-shaft carburetors.",
+    "notes": "",
+    "images": []
+  },
+  {
+    "id": "solex-40-pii-4-air-horns",
+    "name": "Solex 40 PII-4 air horns and mesh filters",
+    "category": "fuel",
+    "price": "See description",
+    "quantity": 2,
+    "condition": "",
+    "status": "available",
+    "description": "Pick a pair to go with the solex carbs. Two sets of air horns for Solex 40 PII-4 carburetors. Shorter original-style air horns with mesh filter.",
+    "notes": "",
+    "images": []
+  }
+  {
     "id": "engine-case",
     "name": "1600 Super engine case",
     "category": "engine",
