@@ -34,9 +34,9 @@ button, input, select, textarea { font: inherit; }
 .logo-mark { font-size: 1.35rem; font-weight: 700; }
 .logo-text { letter-spacing: .06em; font-size: .75rem; }
 .site-nav a { letter-spacing: .04em; font-size: .75rem; }
-.page-intro { padding: 2rem 0 1.4rem; border-bottom: 2px solid var(--border); }
-.page-intro p { max-width: 72ch; font-size: .9375rem; line-height: 1.6; }
-.meta-chips { gap: 0; margin-top: .85rem; }
+.page-intro { padding: 2rem 0 1.4rem; border-bottom: 2px solid var(--border); text-align: center; }
+.page-intro p { max-width: 72ch; font-size: .9375rem; line-height: 1.6; margin-inline: auto; }
+.meta-chips { gap: 0; margin-top: .85rem; justify-content: center; }
 .chip { border: 0; padding: 0 .8rem; letter-spacing: 0; text-transform: none; }
 .chip:first-child { padding-left: 0; }
 .chip + .chip { border-left: 1px solid var(--border); }
@@ -60,9 +60,9 @@ button, input, select, textarea { font: inherit; }
 .parts-grid { background: transparent; border: 0; gap: 1px; }
 .part-card { outline: 1px solid var(--border); }
 .sale-status { font-size: .8125rem; color: var(--mist); }
-.pricing-note { margin-top: 1.25rem; max-width: 72ch; }
+.pricing-note { margin: 1.25rem auto 0; max-width: 72ch; }
 .pricing-note h2 { font-size: .9375rem; font-weight: 600; margin-bottom: .35rem; }
-.page-intro .pricing-note p { font-size: .875rem; line-height: 1.6; margin: .35rem 0 0; }
+.page-intro .pricing-note p { font-size: .875rem; line-height: 1.6; margin: .35rem auto 0; }
 .category-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
 .wanted-bullets { padding-left: 1.25rem; }
 .wanted-bullets li { margin: .35rem 0; }
