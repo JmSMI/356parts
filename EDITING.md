@@ -22,14 +22,6 @@ Edit `src/_data/wanted.json`. Replace the empty `[]` with entries like this:
 
 `budget` and `description` are optional. Separate multiple entries with commas. These appear on the main page under Parts wanted.
 
-## Warehouse photos
-
-Put JPG, PNG, WebP, GIF, or AVIF photos directly in `src/assets/warehouse/`. They automatically appear in the untitled collage at the bottom of the main page, in filename order. No JSON entries are needed; the old `warehouse.json` is no longer used. Rename files with numeric prefixes if you want to control their order.
-
-Rebuild with `npm run build`, or restart `npm start` after configuration changes. Commit the photos along with your changes.
-
-Parts wanted uses only the name and description; budget is no longer displayed.
-
 ## Parts for sale
 
 Edit all listings in `src/_data/parts.json`.

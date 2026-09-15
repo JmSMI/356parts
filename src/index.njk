@@ -97,15 +97,6 @@ title: Porsche 356 Parts — Vancouver, BC
     <a href="mailto:jpmoffat@gmail.com?subject=356%20Parts%20inquiry" class="contact-link">Send an email</a>
   </div>
 
-  {% if warehousePhotos.length %}
-  <section id="warehouse" class="warehouse-collage" aria-label="Warehouse photos">
-    {% for photo in warehousePhotos %}
-    <a class="warehouse-tile" href="{{ ('/assets/warehouse/' + (photo | encodeUri)) | url }}" target="_blank" rel="noopener" aria-label="Open warehouse photo {{ loop.index }} full size">
-      <img src="{{ ('/assets/warehouse/' + (photo | encodeUri)) | url }}" alt="Warehouse parts photo {{ loop.index }}" loading="lazy" decoding="async" fetchpriority="low">
-    </a>
-    {% endfor %}
-  </section>
-  {% endif %}
 
 </div>
 
