@@ -65,9 +65,9 @@ button, input, select, textarea { font: inherit; }
 .part-references ul { padding-left: 1.25rem; }
 .part-references li { margin: .5rem 0; overflow-wrap: anywhere; }
 .part-references p { color: var(--mist); margin-top: .2rem; }
-.pricing-note { margin: 1.25rem auto 0; max-width: 72ch; }
+.pricing-note { margin: 0 auto; padding: 2rem 0; max-width: 72ch; text-align: center; border-top: 1px solid var(--border); }
 .pricing-note h2 { font-size: .9375rem; font-weight: 600; margin-bottom: .35rem; }
-.page-intro .pricing-note p { font-size: .875rem; line-height: 1.6; margin: .35rem auto 0; }
+.pricing-note p { font-size: .875rem; line-height: 1.6; margin: .65rem auto 0; color: var(--mist); }
 .category-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
 .wanted-bullets { padding-left: 1.25rem; }
 .wanted-bullets li { margin: .35rem 0; }
