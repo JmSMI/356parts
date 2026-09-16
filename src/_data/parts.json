@@ -3,11 +3,11 @@
     "id": "gt-brakes",
     "name": "GT brakes - front and rear",
     "category": "brakes",
-    "price": "$7800",
+    "price": "$8000",
     "quantity": 2,
     "condition": "",
     "status": "available",
-    "description": "Front 60mm drums and 60mm shoes with aluminum CNC lifts. Cylinders/springs included for the front drums but will need some parts (piston [NLA-351-521-00] and bushings) [update: I found the pistons, 8 total]. Rear 40mm with re-built complete plates. Extra springs and misc. hardware.",
+    "description": "Porsche 356 Carrera/GT-type front and rear drum brake set. Front setup includes 60mm drums with Fuchs fox-head markings, 60mm brake shoes marked \"SG\", aluminum CNC wheel-cylinder lifts/spacers, wheel cylinders, springs, and all 8 pistons. Some small parts/bushings may still be required. Rear setup uses 40mm drums with rebuilt complete backing-plate assemblies. Includes additional springs and miscellaneous brake hardware. Please review photos carefully for exactly what is included and condition.",
     "notes": "",
     "images": [
       "IMG_4054.jpg",
@@ -37,7 +37,7 @@
   {
     "id": "solex-40-pii-4-unrestored",
     "name": "Solex 40 PII-4 carburetors with intake manifolds - unrestored",
-    "category": "fuel",
+    "category": "engine",
     "price": "$1050",
     "quantity": 1,
     "condition": "Unrestored",
@@ -55,12 +55,12 @@
   {
     "id": "solex-40-pii-4-restored",
     "name": "Solex 40 PII-4 carburetors - restored",
-    "category": "fuel",
+    "category": "engine",
     "price": "$2650",
     "quantity": 1,
     "condition": "Restored",
     "status": "available",
-    "description": "Pair of Solex 40 PII-4 carburetors professionally restored/remanufactured by Bieker Engineering. Restoration documents included. Very clean, unused since Dad converted to EFI. Intake manifolds not included.",
+    "description": "Pair of Solex 40 PII-4 carburetors professionally restored/remanufactured by Bieker Engineering. Restoration documents included. Unused since restoration. Intake manifolds not included.",
     "notes": "",
     "images": [
       "IMG_4074.webp",
@@ -74,20 +74,13 @@
       "IMG_4082.webp",
       "IMG_4083.webp",
       "IMG_4084.webp",
-      "IMG_4085.webp"      
-    ],
-    "references": [
-      {
-        "label": "",
-        "href": "",
-        "note": ""
-      }
+      "IMG_4085.webp"
     ]
   },
   {
     "id": "solex-40-pii-4-air-horns",
     "name": "Solex 40 PII-4 air horns and mesh filters",
-    "category": "fuel",
+    "category": "engine",
     "price": "pending",
     "quantity": 2,
     "condition": "",
@@ -203,7 +196,7 @@
     "id": "rear-drum",
     "name": "Rear drum brakes",
     "category": "brakes",
-    "price": "250 each",
+    "price": "$250 each",
     "quantity": 4,
     "condition": "",
     "status": "available",
@@ -236,7 +229,7 @@
     "id": "exhaust-1",
     "name": "356 exhaust",
     "category": "exhaust",
-    "price": "$tbd",
+    "price": "tbd",
     "quantity": 1,
     "condition": "",
     "status": "available",
