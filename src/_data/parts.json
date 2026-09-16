@@ -75,6 +75,18 @@
       "IMG_4083.webp",
       "IMG_4084.webp",
       "IMG_4085.webp"
+    ],
+    "references": [
+      {
+        "label": "Bieker Engineering",
+        "href": "https://web.archive.org/web/20070530131415/http://www.biekerengineering.com/aboutus.htm",
+        "note": "Looks like Bieker Engineering closed shop by 2022. You can still review his work through the web archives."
+      },
+      {
+        "label": "Pelican parts community notes",
+        "href": "https://forums.pelicanparts.com/porsche-911-technical-forum/233551-bieker-engineering.html",
+        "note": "Does this make these carbs more or less interesting?"
+      }
     ]
   },
   {
@@ -87,7 +99,18 @@
     "status": "available",
     "description": "Not yet for sale I'm still gathering information. Very shippable via Canada Post (~$20 on top). I think I've identified the filters as 'BBR Filters MAX FLOW S/S Custom 104mm premium screen, Queen B duals'. They fit the short velocity stack. I also have the more standard air filters but want to keep these for now. ",
     "notes": "",
-    "images": []
+    "images": [],
+    "references": [
+      {
+        "label": "BBR website. Likely match? TBD.",
+        "href": "https://www.bbrairfilters.com/products/bbr-custom-velocity-stack-filters-covers-hilborn-100mm-dual-v8-set",
+        "note": "I need to verify this but I have documentation and it appears to match."
+      },
+      {
+        "label": "Part identification research",
+        "href": "https://example.com/research"
+      }
+    ]
   },
   {
     "id": "engine-case",
@@ -97,7 +120,7 @@
     "quantity": 1,
     "condition": "",
     "status": "available",
-    "description": "Not yet for sale. I have a lot of heads and some are restored but they've been in storage too long without dessicant. There appears to be parts for a whole engine scattered around here. 1962 Porsche 356B 1600 Super engine case, type 616/12 - P702319. All three pieces matched (99). More parts to be added.",
+    "description": "Not yet for sale. Since there are two cases and at least one set of restoration documents I want to more thoroughly understand what it is I'm listing here. I have a lot of heads and some are restored but they've been in storage too long without dessicant. There appears to be parts for a whole engine scattered around here. 1962 Porsche 356B 1600 Super engine case, type 616/12 - P702319. All three pieces matched (99). More parts to be added.",
     "notes": "",
     "images": [
       "IMG_4062.webp",
