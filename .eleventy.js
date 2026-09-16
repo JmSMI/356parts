@@ -1,4 +1,12 @@
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addWatchTarget("src/assets/project/");
+  eleventyConfig.addGlobalData("projectPhoto", () => {
+    const fs = require("node:fs");
+    const path = require("node:path");
+    return fs.readdirSync(path.join(__dirname, "src/assets/project"), { withFileTypes: true })
+      .filter(file => file.isFile() && /\.(jpe?g|png|webp|avif)$/i.test(file.name))
+      .map(file => file.name).sort()[0] || "";
+  });
   // Keep archived warehouse photos out of the published site.
   for (const entry of require("node:fs").readdirSync(require("node:path").join(__dirname, "src/assets"))) {
     if (entry !== "warehouse") eleventyConfig.addPassthroughCopy("src/assets/" + entry);

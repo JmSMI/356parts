@@ -1,5 +1,11 @@
 # Parts and photos
 
+## The project page
+
+Put one photo in `src/assets/project/` (JPG, PNG, WebP, or AVIF). It automatically appears on `/project/`, without a caption, after the next build. Keep only your chosen photo in that folder; if there are multiple, the first filename alphabetically is displayed. No JSON editing is needed.
+
+When ready to write about the project, edit `src/project.njk` below the photo. The page starts with only its title until you add a photo. Restart `npm start` after this configuration change if the preview is already running.
+
 ## Reference links on a part
 
 Add an optional `references` array inside any entry in `src/_data/parts.json`:

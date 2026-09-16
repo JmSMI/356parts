@@ -1,0 +1,14 @@
+---
+layout: base.njk
+title: The project — Porsche 356
+description: The Porsche 356 project.
+permalink: /project/
+---
+
+<div class="container project-page">
+  <h1>The project</h1>
+  {% if projectPhoto %}
+  <img class="project-photo" src="{{ ('/assets/project/' + (projectPhoto | encodeUri)) | url }}" alt="The Porsche 356 project" decoding="async">
+  {% endif %}
+  {# Add the project story here when ready. #}
+</div>

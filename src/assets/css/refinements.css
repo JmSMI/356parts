@@ -60,6 +60,9 @@ button, input, select, textarea { font: inherit; }
 .parts-grid { background: transparent; border: 0; gap: 1px; }
 .part-card { outline: 1px solid var(--border); }
 .sale-status { font-size: .8125rem; color: var(--mist); }
+.project-page { padding-top: 2rem; padding-bottom: 3rem; min-height: 45vh; }
+.project-page h1 { text-align: center; font-size: clamp(1.65rem, 3vw, 2.15rem); margin-bottom: 1.5rem; }
+.project-photo { width: 100%; height: auto; display: block; }
 .part-references { border-top: 1px solid var(--border-lt); padding-top: 1rem; font-size: .875rem; }
 .part-references h2 { font-size: 1rem; margin-bottom: .5rem; }
 .part-references ul { padding-left: 1.25rem; }
