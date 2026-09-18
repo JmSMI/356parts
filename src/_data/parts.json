@@ -1,5 +1,25 @@
 [
   {
+    "id": "blower-fan",
+    "name": "VW blower fan",
+    "category": "heater",
+    "price": "100",
+    "quantity": 1,
+    "condition": "",
+    "status": "available",
+    "description": "Original Volkswagen centrifugal blower assembly, made in Germany. 12V. Tested and working. Exact VW application/part number not confirmed.",
+    "notes": "",
+    "images": [
+      "blower_fan4xvfucg0yg8e5udyke8.webp",
+      "blower_fanivuhjplttotdrnrbnbz.webp",
+      "blower_fanjur6uaa6didrixjjgcc.webp",
+      "blower_fanlaer8u5fa8hyj6aep7p.webp",
+      "blower_fanlalb7bfrso5mun7stvi.webp",
+      "blower_fanugarvheepevqhkfuyjp.webp",
+      "blower_fanybdsqoawb90chn6cl87.webp"
+    ]
+  },
+  {
     "id": "gt-brakes",
     "name": "GT brakes - front and rear",
     "category": "brakes",
@@ -104,7 +124,7 @@
       {
         "label": "BBR website. Likely match? TBD.",
         "href": "https://www.bbrairfilters.com/products/bbr-custom-velocity-stack-filters-covers-hilborn-100mm-dual-v8-set",
-        "note": "I need to verify this but I have documentation and it appears to match."
+        "note": "I need to verify this but I have documentation and it appears to match. Canadian company in case you want to buy a custom set."
       },
       {
         "label": "Part identification research",
@@ -270,7 +290,7 @@
     "id": "exhaust-2",
     "name": "356 exhaust",
     "category": "exhaust",
-    "price": "$400 firm",
+    "price": "$400",
     "quantity": 1,
     "condition": "",
     "status": "available",
